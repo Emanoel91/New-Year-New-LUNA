@@ -53,7 +53,7 @@ def get_data(query1):
 Active_Addresses = get_data('Active Addresses')
 active_address:_statistic = get_data('active address: statistic')
 New_Address = get_data('New Address')
-new_address: statistic = get_data('new address: statistic')
+new_address:_statistic = get_data('new address: statistic')
 Total_Addresses = get_data('Total Addresses')
 
 
