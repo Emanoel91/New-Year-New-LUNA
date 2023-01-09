@@ -92,9 +92,21 @@ with c2:
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
     
 df = User_Type
-fig = px.bar(df, x='Date', y='Addresses', color='User Type', title='Number of Users per Day', log_y=False)
-fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Addresses Count', xaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+c1, c2 =st.columns(2)
+with c1:
+        fig = px.bar(df, x='Date', y='Addresses', color='User Type', title='Number of Users per Day', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Addresses Count', xaxis={'categoryorder':'total ascending'})
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:
+        fig = go.Figure()
+        for i in df['User Type'].unique():
+            fig.add_trace(go.Scatter(
+                name=i,
+                x=df.query("User Type == @i")['Date'],
+                y=df.query("User Type == @i")['Addresses'],
+                mode='lines',
+                stackgroup='one',
+                groupnorm='percent'
 
 df = Number_of_New_Liquidity_Providers 
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
