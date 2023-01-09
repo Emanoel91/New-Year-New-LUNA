@@ -73,6 +73,7 @@ c1, c2 = st.columns(2)
     
 with c1:
         st.metric(label='Total Number of New Liquidity Providers (2023)', value=df['New Liquidity Providers'])
+
 df = Liquidity_pools
 fig = px.bar(df, x='Date', y='Transactions Count', color='Action', title='Number of Actions per Day', log_y=False)
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
@@ -89,7 +90,20 @@ with c2:
        fig = px.bar(df, x='Action', y='Total Transactions Count', color='Action', title='', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Class', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
- 
+    
+df = User_Type
+fig = px.bar(df, x='Date', y='Addresses', color='User Type', title='Number of Users per Day', log_y=False)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Addresses Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = Number_of_New_Liquidity_Providers 
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['New Liquidity Providers'], name='Liquidity Providers'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative New Liquidity Providers'], name='Cummulative Liquidity Providers'), secondary_y=True)
+fig.update_layout(title_text='Number of New Liquidity Providers')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
  
  
        
