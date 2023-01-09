@@ -104,8 +104,8 @@ with c2:
         for i in df['User Type'].unique():
             fig.add_trace(go.Scatter(
                 name=i,
-                x=df.query("User Type == @i")['Date'],
-                y=df.query("User Type == @i")['Addresses'],
+                x=df.query1("User Type == @i")['Date'],
+                y=df.query1("User Type == @i")['Addresses'],
                 mode='lines',
                 stackgroup='one',
                 groupnorm='percent'
