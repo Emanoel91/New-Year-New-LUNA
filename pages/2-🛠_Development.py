@@ -75,6 +75,6 @@ with c1:
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
                
 with c2:
-        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Median Number of New Contracts')
+        fig = px.bar(df, x='Year', y='Median', title='🟡 Daily Median Number of New Contracts')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
