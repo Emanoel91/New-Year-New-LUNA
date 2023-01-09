@@ -83,13 +83,13 @@ c1, c2 = st.columns(2)
 
 with c1:      
         df = Liquidity_pools_statistic_Average
-        fig = px.bar(df, x='Action', y='Average Tx Count', color='Year', title='Daily Average Number of Actions', log_y=True, barmode='group')
+        fig = px.bar(df, x='Action', y='Average Tx Count', color='Year', title='Daily Average Number of Actions', log_y=False, barmode='group')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
               
 with c2:
         df = Liquidity_pools_statistic_Median
-        fig = px.bar(df, x='Action', y='Median Tx Count', color='Year', title='Daily Median Number of Actions', log_y=True, barmode='group')
+        fig = px.bar(df, x='Action', y='Median Tx Count', color='Year', title='Daily Median Number of Actions', log_y=False, barmode='group')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
 
@@ -125,13 +125,13 @@ df = Average_Daily_Liquidity_Providers
 c1, c2 = st.columns(2)
 
 with c1:      
-        fig = px.bar(df, x='User Type', y='Average Address Count', color='Year', title='Daily Average Number of Liquidity Providers', log_y=True, barmode='group')
+        fig = px.bar(df, x='User Type', y='Average Address Count', color='Year', title='Daily Average Number of Liquidity Providers', log_y=False, barmode='group')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Liquidity Providers', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
         
 df = Median_Daily_Liquidity_Providers        
 with c2:
-        fig = px.bar(df, x='User Type', y='Median Address Count', color='Year', title='Daily Median Number of Liquidity Providers', log_y=True, barmode='group')
+        fig = px.bar(df, x='User Type', y='Median Address Count', color='Year', title='Daily Median Number of Liquidity Providers', log_y=False, barmode='group')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Liquidity Providers', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
  
