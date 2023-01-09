@@ -76,5 +76,24 @@ fig = px.bar(df, x='Date', y='New Addresses', title='Number of New Addresses per
 fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Status', yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+df = active_address_statistic
+c1, c2 = st.columns(2)
+with c1:
+        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Average Number of Active Addresses ')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+        
+        fig = px.bar(df, x='Year', y='Median', title='🟡 Daily Median Number of Active Addresses ')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+        
+df = new_address_statistic
+with c2:
+        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Average Number of New Addresses ')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+        
+        fig = px.bar(df, x='Year', y='Median', title='🟡 Daily Median Number of New Addresses ')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
