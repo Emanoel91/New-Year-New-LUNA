@@ -109,7 +109,7 @@ with c2:
                 mode='lines',
                 stackgroup='one',
                 groupnorm='percent'
-            )  
+            ))  
              
 df = Number_of_New_Liquidity_Providers 
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
