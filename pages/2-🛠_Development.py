@@ -38,61 +38,43 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-    if query1 == 'Active Addresses':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/df33271b-7e1e-41bf-b7be-451fb308789b/data/latest')
-    elif query1 == 'active address: statistic':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ca3eb8e1-5e55-4998-ab09-35a2b70293a2/data/latest')
-    elif query1 == 'New Address':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6b26ebb2-3e6a-4c66-a8c4-7d7c4593b2d4/data/latest')
-    elif query1 == 'new address: statistic':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0703a856-ad7d-49d3-a5e3-4aaf8efca476/data/latest')
-    elif query1 == 'Total Addresses':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/c7256259-9dae-492b-bc24-7f1b6e556065/data/latest')
+    if query1 == 'Contracts':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4f470ff4-e192-4be3-94cf-dd143ca5f358/data/latest')
+    elif query1 == 'Total Contracts':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e6f8b14f-ca91-42aa-9bd6-be3c56e5c33c/data/latest')
+    elif query1 == 'Statistic Contracts':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/744b7f5c-f0e5-41f4-ba4d-ad25a7e295a7/data/latest')
     return None
 
-Active_Addresses = get_data('Active Addresses')
-active_address_statistic = get_data('active address: statistic')
-New_Address = get_data('New Address')
-new_address_statistic = get_data('new address: statistic')
-Total_Addresses = get_data('Total Addresses')
+Contracts = get_data('Contracts')
+Total_Contracts = get_data('Total Contracts')
+Statistic_Contracts = get_data('Statistic Contracts')
 
-
-df = Total_Addresses
+df = Total_Contracts
 c1, c2 = st.columns(2)
     
 with c1:
-        st.metric(label='Total Active Addresses (2023)', value=df['Total Active Addresses'])
+        st.metric(label='Total Number of New Contracts (2023)', value=df['Total Contracts'])
 
-with c2:
-        st.metric(label='Total New Addresses (2023)', value=df['Total New Addresses'])
 
-df = Active_Addresses
-fig = px.bar(df, x='Date', y='Active Addresses', title='Number of Avtive Addresses per Day', log_y=False)
-fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Status', yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
+df = Contracts
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['Contracts'], name='New Contracts'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Contracts'], name='Cummulative New Contracts'), secondary_y=True)
+fig.update_layout(title_text='Number of New Contracts per Day')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-df = New_Address
-fig = px.bar(df, x='Date', y='New Addresses', title='Number of New Addresses per Day', log_y=False)
-fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Status', yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-df = active_address_statistic
+df = Statistic_Contracts
 c1, c2 = st.columns(2)
 with c1:
-        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Average Number of Active Addresses ')
+        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Average Number of New Contracts')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-        
-        fig = px.bar(df, x='Year', y='Median', title='🟡 Daily Median Number of Active Addresses ')
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-        
-df = new_address_statistic
+               
 with c2:
-        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Average Number of New Addresses ')
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-        
-        fig = px.bar(df, x='Year', y='Median', title='🟡 Daily Median Number of New Addresses ')
+        fig = px.bar(df, x='Year', y='Average', title='🟡 Daily Median Number of New Contracts')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
