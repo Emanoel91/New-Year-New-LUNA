@@ -109,7 +109,7 @@ with c2:
                 mode='lines',
                 stackgroup='one',
                 groupnorm='percent'
-            ))  
+             )  
         fig.update_layout(title='Types of users(%Normalized)')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
    
