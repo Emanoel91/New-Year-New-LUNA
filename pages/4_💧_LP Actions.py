@@ -110,7 +110,9 @@ with c2:
                 stackgroup='one',
                 groupnorm='percent'
             ))  
-             
+        fig.update_layout(title='Types of users(%Normalized)')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+   
 df = Number_of_New_Liquidity_Providers 
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
 fig.add_trace(go.Bar(x=df['Date'], y=df['New Liquidity Providers'], name='Liquidity Providers'), secondary_y=False)
