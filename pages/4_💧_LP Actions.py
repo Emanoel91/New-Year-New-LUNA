@@ -86,7 +86,7 @@ with c1:
         fig.update_traces(textinfo='percent+label', textposition='inside')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
 with c2:
-       fig = px.bar(df, x='Action', y='Total Transactions Count', color='Action', title='', log_y=True)
+       fig = px.bar(df, x='Action', y='Total Transactions Count', color='Action', title='', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Class', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
  
