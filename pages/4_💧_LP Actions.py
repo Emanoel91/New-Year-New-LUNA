@@ -73,11 +73,25 @@ c1, c2 = st.columns(2)
     
 with c1:
         st.metric(label='Total Number of New Liquidity Providers (2023)', value=df['New Liquidity Providers'])
-
-
 df = Liquidity_pools
 fig = px.bar(df, x='Date', y='Transactions Count', color='Action', title='Number of Actions per Day', log_y=False)
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = Total_Transactions_Count_of_each_Action
+c1, c2 = st.columns(2) 
+with c1:
+        fig = px.pie(df, values='Total Transactions Count', names='Action', title='Total Transactions Count of each Action')
+        fig.update_layout(legend_title='Action', legend_y=0.5)
+        fig.update_traces(textinfo='percent+label', textposition='inside')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
+with c2:
+       fig = px.bar(df, x='Action', y='Total Transactions Count', color='Action', title='', log_y=True)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Class', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+ 
+ 
+ 
+       
 
 
