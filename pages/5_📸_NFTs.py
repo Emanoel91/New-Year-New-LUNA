@@ -147,7 +147,15 @@ with c1:
     
         fig = px.bar(df, x='Year', y='Median Volume', color='Year', title='Daily Median Volume of NFT Mints', log_y=False)
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+       
+        fig = px.bar(df, x='Year', y='Average NFTs', color='Year', title='Daily Average Number of NFTs Minted', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs Count')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+    
+        fig = px.bar(df, x='Year', y='Median NFTs', color='Year', title='Daily Median Number of NFTs Minted', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs Count')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)      
 with c2:  
         fig = px.bar(df, x='Year', y='Average Mint', color='Year', title='Daily Average Number of TXs Related to Mints', log_y=False)
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count')
@@ -155,7 +163,15 @@ with c2:
     
         fig = px.bar(df, x='Year', y='Median Mint', color='Year', title='Daily Median Number of TXs Related to Mints', log_y=False)
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count')
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)     
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+       
+        fig = px.bar(df, x='Year', y='Average Collections', color='Year', title='Daily Average Number of Collections Minted', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs Count')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+    
+        fig = px.bar(df, x='Year', y='Median Collections', color='Year', title='Daily Median Number of Collections Minted', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs Count')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)       
 with c3:  
         fig = px.bar(df, x='Year', y='Average Minters', color='Year', title='Daily Average Number of Unique Minters', log_y=False)
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Minters Count')
