@@ -65,7 +65,7 @@ df = Total_Mint
 c1, c2, c3 = st.columns(3)
     
 with c1:
-        st.metric(label='**Total Volume:$LUNA (2023)**', value=df['Total Volume'])
+        st.metric(label='*Total Volume:$LUNA (2023)*', value=df['Total Volume'])
         st.metric(label='Total Number of Collections Minted (2023)', value=df['Total Collections'].round(2))
 with c2:
         st.metric(label='Total Number of Mint (2023)', value=df['Total Mint'])
