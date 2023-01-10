@@ -220,13 +220,7 @@ with c3:
         st.metric(label='**Total Collections Count (2023)**', value=df['Total Collections Count'].round(2)) 
 
 df = NFT_Sales 
-fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
-fig.add_trace(go.Bar(x=df['Date'], y=df['Sales Volume'], name='Sales Volume'), secondary_y=False)
-fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Sales Volume'], name='Cummulative Sales Volume'), secondary_y=True)
-fig.update_layout(title_text='Sales Volume per Day ($LUNA)')
-fig.update_yaxes(title_text='', secondary_y=False)
-fig.update_yaxes(title_text='', secondary_y=True)
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)   
+  
      
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
 fig.add_trace(go.Bar(x=df['Date'], y=df['NFTs Count'], name='NFTs'), secondary_y=False)
