@@ -223,8 +223,8 @@ df = NFT_Sales
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
 fig.add_trace(go.Bar(x=df['Date'], y=df['Sales Volume'], name='Sales Volume'), secondary_y=False)
 fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Sales Volume'], name='Cummulative Sales Volume'), secondary_y=True)
-fig.update_layout(title_text='Sales Volume per Day ($LUNA)')
-fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_layout(title_text='Sales Volume per Day')
+fig.update_yaxes(title_text='$LUNA', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)   
      
