@@ -141,7 +141,7 @@ c1, c2, c3 = st.columns(3)
 df = NFT_Mint_Statistics
 
 with c1: 
-        fig = px.bar(df, x='Year', y='Average Volume', color='Year', title='Daily Average Volume of NFT Mints', log_y=False)
+        fig = px.bar(df, x='Year', y='Average Volume', color='Average Volume', title='Daily Average Volume of NFT Mints', log_y=False)
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
     
