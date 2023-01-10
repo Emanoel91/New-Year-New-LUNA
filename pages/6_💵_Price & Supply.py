@@ -109,8 +109,8 @@ with c3:
 df = Circulating_Supply 
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
 fig.add_trace(go.Bar(x=df['Date'], y=df['Circulating Supply'], name='Circulating Supply'), secondary_y=False)
-fig.add_trace(go.Line(x=df['Date'], y=df['%Circulating Supply Ratio'], name='%Circulating Supply Ratio'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['%Circulating Supply Ratio'], name='%Circulating Supply Ratio'), secondary_y=True)
 fig.update_layout(title_text='Circulating Supply per Day')
 fig.update_yaxes(title_text='$LUNA', secondary_y=False)
-fig.update_yaxes(title_text='', secondary_y=True)
+fig.update_yaxes(title_text='%', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
