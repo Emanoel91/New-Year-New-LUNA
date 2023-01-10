@@ -134,15 +134,25 @@ df = Top_5_Collections_Based_on_Minters_Count
 with c1:
         fig = px.bar(df, x='Contract Address', y='Minter Count', color='Contract Address', title='Top 5 Collections Based on Minters Count', log_y=False)
         fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Contract Address', yaxis_title='Minters Count', xaxis={'categoryorder':'total ascending'})
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
+    
+
+c1, c2, c3 = st.columns(3) 
+df = NFT_Mint_Statistics
+
+with c1: 
+        fig = px.bar(df, x='Year', y='Average Volume', color='Year', title='Daily Average Volume of NFT Mints', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:  
+        fig = px.bar(df, x='Year', y='Average Mint', color='Year', title='Daily Average Number of Transactions Related to Mints', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
-  
-  
-  
-  
-  
-  
-  
-  
+with c3:  
+        fig = px.bar(df, x='Year', y='Average Minters', color='Year', title='Daily Average Number of Unique Minters', log_y=False)
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Minters Count')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+ 
   
   
   
