@@ -90,7 +90,9 @@ fig = px.bar(df, x='Day', y='RoPC', title='Range of Price Changes(RoPC)', log_y=
 fig.update_layout(showlegend=False, xaxis_title=None, yaxis_title=None)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
-
+df = Comparison_of_LUNA_price_metrics_in_2022_and_2023
+fig = px.line(df, x='Criteria', y='Amount', color='Year', title='Comparison of LUNA price metrics in 2022 and 2023', log_y=False)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.subheader('🟡 LUNA Supply')
