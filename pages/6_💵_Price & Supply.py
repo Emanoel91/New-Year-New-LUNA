@@ -70,10 +70,10 @@ df = Current_LUNA_Price
 c1, c2 = st.columns(2)
     
 with c1:
-        st.metric(label='Current LUNA Price', value=df['CLOSE'])
+        st.metric(label='**Current LUNA Price**', value=df['CLOSE'])
 df = Percentage_of_LUNA_price_changes_in_2023
 with c2:
-        st.metric(label='Percentage of LUNA Price Changes in 2023', value=df['Percentage of Changes'])
+        st.metric(label='**Percentage of LUNA Price Changes in 2023**', value=df['Percentage of Changes'])
 
 df = LUNA_Price_per_Day
 fig = px.line(df, x='Day', y='Price', color='Criteria', title='LUNA Price per Day', log_y=False)
@@ -96,3 +96,12 @@ fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.subheader('🟡 LUNA Supply')
+df = Current_Circulating_Supply 
+c1, c2, c3 = st.columns(3)
+
+with c1:
+        st.metric(label='**Total Supply**', value=df['Total Supply'])
+with c2:
+        st.metric(label='**Circulating Supply**', value=df['Circulating Supply'])
+with c3:
+        st.metric(label='**%Circulating Supply Ratio**', value=df['%Circulating Supply Ratio'])
