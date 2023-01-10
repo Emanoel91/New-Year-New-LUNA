@@ -122,19 +122,17 @@ with c1:
         fig = px.bar(df, x='Contract Address', y='Mint Volume', color='Contract Address', title='Top 5 Collections Based on Mints Volume', log_y=False)
         fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Contract Address', yaxis_title='Volume($LUNA)', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-    
-        df = Top_5_Collections_Based_on_Minters_Count
-        fig = px.bar(df, x='Contract Address', y='Minter Count', color='Contract Address', title='Top 5 Collections Based on Minters Count', log_y=False)
-        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Contract Address', yaxis_title='Minters Count', xaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-    
+      
 df = Top_5_Collections_Based_on_Mints_Count 
 with c2:
         fig = px.bar(df, x='Contract Address', y='Mint Count', color='Contract Address', title='Top 5 Collections Based on Mints Count', log_y=False)
         fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Contract Address', yaxis_title='Mints Count', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-  
+df = Top_5_Collections_Based_on_Minters_Count
+fig = px.bar(df, x='Contract Address', y='Minter Count', color='Contract Address', title='Top 5 Collections Based on Minters Count', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Contract Address', yaxis_title='Minters Count', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
   
   
   
