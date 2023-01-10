@@ -253,7 +253,7 @@ with c1:
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
     
-        fig = px.bar(df, x='Date', y='Average Purchasers Count', title='Daily Average Purchasers Count')
+        fig = px.bar(df, x='Year', y='Average Purchasers Count', title='Daily Average Purchasers Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Purchasers')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
 
@@ -265,7 +265,7 @@ with c2:
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Sales')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-        fig = px.bar(df, x='Date', y='Average Collections Count', title='Daily Average Collections Count')
+        fig = px.bar(df, x='Yer', y='Average Collections Count', title='Daily Average Collections Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Collections')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
  
@@ -274,7 +274,7 @@ with c3:
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Sellers')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
     
-        fig = px.bar(df, x='Date', y='Average NFTs Count', title='Daily Average NFTs Count')
+        fig = px.bar(df, x='Year', y='Average NFTs Count', title='Daily Average NFTs Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
         
