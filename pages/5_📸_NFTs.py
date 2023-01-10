@@ -166,11 +166,11 @@ with c2:
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
        
         fig = px.bar(df, x='Year', y='Average Collections', title='Daily Average Number of Collections Minted', log_y=False)
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Collections Count')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
     
         fig = px.bar(df, x='Year', y='Median Collections', title='Daily Median Number of Collections Minted', log_y=False)
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Collections Count')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)       
 with c3:  
         fig = px.bar(df, x='Year', y='Average Minters', title='Daily Average Number of Unique Minters', log_y=False)
