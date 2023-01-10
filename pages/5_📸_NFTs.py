@@ -38,99 +38,38 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-    if query1 == 'Liquidity pools':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/cac60939-7270-4b4c-ada5-c47dbb3350ec/data/latest')
-    elif query1 == 'Liquidity pools statistic Average':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8f667e4d-f334-4e6a-9426-1b7dfccf08c2/data/latest')
-    elif query1 == 'Liquidity pools statistic Median':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ead7df54-8d50-414b-bc27-f75e51900f3e/data/latest')
-    elif query1 == 'Total Transactions Count of each Action':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/236f33de-dcc6-4dc1-875f-4dde90250398/data/latest')
-    elif query1 == 'User Type':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5bf044f7-a81c-4aee-a565-57e9231956a0/data/latest')
-    elif query1 == 'Average Daily Liquidity Providers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ae7f585b-58cd-40e9-aaca-e5d116fde30e/data/latest')
-    elif query1 == 'Median Daily Liquidity Providers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/2b17d842-e3a2-4c2e-ac75-6656d9fd836b/data/latest')
-    elif query1 == 'Number of New Liquidity Providers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/7f7a1fe1-4eac-4a03-9fda-bc0f5e029f1b/data/latest')
-    elif query1 == 'Total New Liquidity Providers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/7ad5a1fd-f041-4e39-b5d2-9a1a994070ae/data/latest')
+    if query1 == 'Total Mint':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d0d103bd-88d9-4c74-b0d7-5f509cb4e675/data/latest')
+    elif query1 == 'NFT Mint':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4454880f-7a76-4a64-9de7-41051b620905/data/latest')
+    elif query1 == 'NFT Mint Statistics':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/933081b5-d83a-4ed8-bd92-db7f6b7c5bee/data/latest')
+    elif query1 == 'Top 5 Collections Based on Mints Volume':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8c3794e7-0457-41d9-bce1-d36d4b068d1b/data/latest')
+    elif query1 == 'Top 5 Collections Based on Mints Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/442de8f6-ddd9-4446-afaf-6c7d5ba347c3/data/latest')
+    elif query1 == 'Top 5 Collections Based on Minters Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/62119110-38ff-4de3-a228-e0cc48ba0a42/data/latest')
     return None
 
-Liquidity_pools = get_data('Liquidity pools')
-Liquidity_pools_statistic_Average = get_data('Liquidity pools statistic Average')
-Liquidity_pools_statistic_Median = get_data('Liquidity pools statistic Median')
-Total_Transactions_Count_of_each_Action = get_data('Total Transactions Count of each Action')
-User_Type = get_data('User Type')
-Average_Daily_Liquidity_Providers = get_data('Average Daily Liquidity Providers')
-Median_Daily_Liquidity_Providers = get_data('Median Daily Liquidity Providers')
-Number_of_New_Liquidity_Providers = get_data('Number of New Liquidity Providers')
-Total_New_Liquidity_Providers = get_data('Total New Liquidity Providers')
+Total_Mint = get_data('Total Mint')
+NFT_Mint = get_data('NFT Mint')
+NFT_Mint_Statistics = get_data('NFT Mint Statistics')
+Top_5_Collections_Based_on_Mints_Volume = get_data('Top 5 Collections Based on Mints Volume')
+Top_5_Collections_Based_on_Mints_Count = get_data('Top 5 Collections Based on Mints Count')
+Top_5_Collections_Based_on_Minters_Count = get_data('Top 5 Collections Based on Minters Count')
 
-df = Total_New_Liquidity_Providers
-c1, c2 = st.columns(2)
+st.subheader('✨ NFT Mints')
+
+df = Total_Mint
+c1, c2, c3 = st.columns(3)
     
 with c1:
-        st.metric(label='Total Number of New Liquidity Providers (2023)', value=df['New Liquidity Providers'])
-
-df = Liquidity_pools
-fig = px.bar(df, x='Date', y='Transactions Count', color='Action', title='Number of Actions per Day', log_y=False)
-fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-c1, c2 = st.columns(2)
-
-with c1:      
-        df = Liquidity_pools_statistic_Average
-        fig = px.bar(df, x='Action', y='Average Tx Count', color='Year', title='Daily Average Number of Actions', log_y=False, barmode='group')
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-              
+        st.metric(label='Total Volume (2023)', value=df['Total Volume'])
+        st.metric(label='Total Number of Collections Minted (2023)', value=df['Total Collections'].round(2))
 with c2:
-        df = Liquidity_pools_statistic_Median
-        fig = px.bar(df, x='Action', y='Median Tx Count', color='Year', title='Daily Median Number of Actions', log_y=False, barmode='group')
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
-
-
-df = Total_Transactions_Count_of_each_Action
-c1, c2 = st.columns(2) 
-with c1:
-        fig = px.pie(df, values='Total Transactions Count', names='Action', title='Total Transactions Count of each Action')
-        fig.update_layout(legend_title='Action', legend_y=0.5)
-        fig.update_traces(textinfo='percent+label', textposition='inside')
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
-with c2:
-       fig = px.bar(df, x='Action', y='Total Transactions Count', color='Action', title='', log_y=False)
-       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Class', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
-    
-df = User_Type
-fig = px.bar(df, x='Date', y='Addresses', color='User Type', title='Number of Users per Day', log_y=False)
-fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Addresses Count', xaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-   
-df = Number_of_New_Liquidity_Providers 
-fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
-fig.add_trace(go.Bar(x=df['Date'], y=df['New Liquidity Providers'], name='Liquidity Providers'), secondary_y=False)
-fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative New Liquidity Providers'], name='Cummulative Liquidity Providers'), secondary_y=True)
-fig.update_layout(title_text='Number of New Liquidity Providers')
-fig.update_yaxes(title_text='', secondary_y=False)
-fig.update_yaxes(title_text='', secondary_y=True)
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-df = Average_Daily_Liquidity_Providers
-c1, c2 = st.columns(2)
-
-with c1:      
-        fig = px.bar(df, x='User Type', y='Average Address Count', color='Year', title='Daily Average Number of Liquidity Providers', log_y=False, barmode='group')
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Liquidity Providers', xaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-        
-df = Median_Daily_Liquidity_Providers        
-with c2:
-        fig = px.bar(df, x='User Type', y='Median Address Count', color='Year', title='Daily Median Number of Liquidity Providers', log_y=False, barmode='group')
-        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Liquidity Providers', xaxis={'categoryorder':'total ascending'})
-        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+        st.metric(label='Total Number of Mint (2023)', value=df['Total Mint'])
+        st.metric(label='Total Number of NFT Minted (2023)', value=df['Total NFTs'].round(2))
+with c3:
+        st.metric(label='Total Number of Unique Minters (2023)', value=df['Total Minters'])
+ 
