@@ -66,10 +66,10 @@ c1, c2, c3 = st.columns(3)
     
 with c1:
         st.metric(label='**Total Volume:$LUNA (2023)**', value=df['Total Volume'])
-        st.metric(label='***Total Number of Collections Minted (2023)', value=df['Total Collections'].round(2))
+        st.metric(label='**Total Number of Collections Minted (2023)**', value=df['Total Collections'].round(2))
 with c2:
-        st.metric(label='Total Number of Mint (2023)', value=df['Total Mint'])
-        st.metric(label='Total Number of NFT Minted (2023)', value=df['Total NFTs'].round(2))
+        st.metric(label='**Total Number of Mint (2023)**', value=df['Total Mint'])
+        st.metric(label='**Total Number of NFT Minted (2023)**', value=df['Total NFTs'].round(2))
 with c3:
-        st.metric(label='Total Number of Unique Minters (2023)', value=df['Total Minters'])
+        st.metric(label='**Total Number of Unique Minters (2023)**', value=df['Total Minters'])
  
