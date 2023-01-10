@@ -85,8 +85,10 @@ fig = px.line(df, x='Day', y='Price', color='TYPE', title='LUNA Price Metric', l
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
-
+df = Range_of_Price_Change
+fig = px.bar(df, x='Day', y='RoPC', title='Range of Price Changes(RoPC)', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, yaxis_title=None)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
