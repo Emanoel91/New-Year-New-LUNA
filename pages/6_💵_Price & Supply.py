@@ -75,8 +75,10 @@ df = Percentage_of_LUNA_price_changes_in_2023
 with c2:
         st.metric(label='Percentage of LUNA Price Changes in 2023', value=df['Percentage of Changes'])
 
-
-
+df = LUNA_Price_per_Day
+fig = px.line(df, x='Day', y='Price', color='Criteria', title='LUNA Price per Day', log_y=False)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
