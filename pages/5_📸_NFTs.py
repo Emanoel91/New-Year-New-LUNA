@@ -145,7 +145,7 @@ with c1:
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:  
-        fig = px.bar(df, x='Year', y='Average Mint', color='Year', title='Daily Average Number of Transactions Related to Mints', log_y=False)
+        fig = px.bar(df, x='Year', y='Average Mint', color='Year', title='Daily Average Number of TXs Related to Mints', log_y=False)
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 with c3:  
