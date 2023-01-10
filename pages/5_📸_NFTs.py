@@ -256,16 +256,13 @@ with c1:
         fig = px.bar(df, x='Year', y='Average Purchasers Count', title='Daily Average Purchasers Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Purchasers')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
-
-       
-  
-  
+ 
 with c2:
         fig = px.bar(df, x='Year', y='Average Sales Count', title='Daily Average Sales Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Sales')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-        fig = px.bar(df, x='Yer', y='Average Collections Count', title='Daily Average Collections Count')
+        fig = px.bar(df, x='Year', y='Average Collections Count', title='Daily Average Collections Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Collections')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
  
