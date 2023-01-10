@@ -273,5 +273,52 @@ with c3:
     
         fig = px.bar(df, x='Year', y='Average NFTs Count', title='Daily Average NFTs Count')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+       
+c1, c2, c3 = st.columns(3)
+    
+with c1:
+        fig = px.bar(df, x='Year', y='Median Sales Volume', title='Daily Median Sales Volume')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    
+        fig = px.bar(df, x='Year', y='Median Purchasers Count', title='Daily Median Purchasers Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Purchasers')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
+ 
+with c2:
+        fig = px.bar(df, x='Year', y='Median Sales Count', title='Daily Median Sales Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Sales')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+        fig = px.bar(df, x='Year', y='Median Collections Count', title='Daily Median Collections Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Collections')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
+ 
+with c3:
+        fig = px.bar(df, x='Year', y='Median Sellers Count', title='Daily Median Sellers Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Sellers')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    
+        fig = px.bar(df, x='Year', y='Median NFTs Count', title='Daily Median NFTs Count')
+        fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs')
+        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)           
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
         
