@@ -80,7 +80,10 @@ fig = px.line(df, x='Day', y='Price', color='Criteria', title='LUNA Price per Da
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+df = LUNA_Price_Metric
+fig = px.line(df, x='Day', y='Price', color='TYPE', title='LUNA Price Metric', log_y=False)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
