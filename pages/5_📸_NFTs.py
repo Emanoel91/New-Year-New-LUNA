@@ -181,6 +181,6 @@ with c3:
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Minters Count')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
   
-st.subheader('🖼 NFT Sales') 
+st.subheader('💵 NFT Sales') 
   
  
