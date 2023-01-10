@@ -64,6 +64,8 @@ def get_data(query1):
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/db5daceb-922a-4f0a-aa96-d65b6c8eb866/data/latest')
     elif query1 == 'Top 5 Collections Count Based on Purchasers Count':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4dcf846b-e062-4b32-a3aa-24d9848076fc/data/latest')
+    elif query1 == 'NFT Users Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6d19d5d2-d16d-4213-9269-14338523d4d5/data/latest')
     return None
 
 Total_Mint = get_data('Total Mint')
@@ -79,6 +81,7 @@ Top_5_Collections_Count_Based_on_Sales_Volume = get_data('Top 5 Collections Coun
 Top_5_Collections_Count_Based_on_Sales_Count = get_data('Top 5 Collections Count Based on Sales Count')
 Top_5_Collections_Count_Based_on_Sellers_Count = get_data('Top 5 Collections Count Based on Sellers Count')
 Top_5_Collections_Count_Based_on_Purchasers_Count = get_data('Top 5 Collections Count Based on Purchasers Count')
+NFT_Users_Count = get_data('NFT Users Count')
 
 st.subheader('✨ NFT Mints')
 
@@ -223,4 +226,9 @@ fig.add_trace(go.Line(x=df['Date'], y=df['Collections Count'], name='Collections
 fig.update_layout(title_text='Number of Collections & NFTs Minted per Day')
 fig.update_yaxes(title_text='', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+df = NFT_Users_Count
+fig = px.bar(df, x='Date', y='Users Count', color='User Type', title='Number of Unique Sellers & Purchasers', log_y=False)
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Users Count', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
