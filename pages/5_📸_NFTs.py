@@ -72,4 +72,63 @@ with c2:
         st.metric(label='**Total Number of NFT Minted (2023)**', value=df['Total NFTs'].round(2))
 with c3:
         st.metric(label='**Total Number of Unique Minters (2023)**', value=df['Total Minters'])
+  
+df = NFT_Mint
+
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['Volume'], name='Volume'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Volume'], name='Cummulative Volume'), secondary_y=True)
+fig.update_layout(title_text='Volume of NFTs Minted per Day')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['Mint'], name='Mint'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Mint'], name='Cummulative Mint'), secondary_y=True)
+fig.update_layout(title_text='Number of Transactions Related to Mint')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['Minters'], name='Minters'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Minters'], name='Cummulative Minters'), secondary_y=True)
+fig.update_layout(title_text='Number of Unique Minters per Day')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['NFTs'], name='NFTs'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative NFTs'], name='Cummulative NFTs'), secondary_y=True)
+fig.update_layout(title_text='Number of NFTs Minted per Day')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['Collections'], name='Collections'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Collections'], name='Cummulative Collections'), secondary_y=True)
+fig.update_layout(title_text='Number of Collections Minted per Day')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  
