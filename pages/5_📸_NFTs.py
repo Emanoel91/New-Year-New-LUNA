@@ -226,7 +226,11 @@ fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Sales Volume'], name='Cumm
 fig.update_layout(title_text='Sales Volume per Day')
 fig.update_yaxes(title_text='$LUNA', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)   
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+
+fig = px.area(df, x='Date', y='Sales Count', title='Sales Count per Day')
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='TXs Count')
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
      
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
 fig.add_trace(go.Bar(x=df['Date'], y=df['NFTs Count'], name='NFTs'), secondary_y=False)
