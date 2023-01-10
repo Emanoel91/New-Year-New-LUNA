@@ -326,7 +326,7 @@ with c1:
       
 df = Top_5_Collections_Count_Based_on_Purchasers_Count 
 with c2:
-        fig = px.bar(df, x='Collection', y='Purchasers Count', color='Collection', title='Top 5 Collections Based on Purchasers Count', log_y=False)
+        fig = px.bar(df, x='Collection', y='Purchaser Count', color='Collection', title='Top 5 Collections Based on Purchasers Count', log_y=False)
         fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Collection', yaxis_title='Purchasers Count', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)       
        
