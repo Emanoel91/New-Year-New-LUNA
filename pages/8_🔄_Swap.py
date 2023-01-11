@@ -52,6 +52,8 @@ def get_data(query1):
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0ccc6374-10ac-400a-9dd6-e812739ba14c/data/latest')
     elif query1 == 'Swappers':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/3581a525-11b6-4f95-bc86-2d3cb82bd112/data/latest')
+    elif query1 == 'Total':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/859ea2b8-d532-43b7-9ef1-8cd91a46c77a/data/latest')
     return None
 
 Buyers_Data = get_data('Buyers Data')
@@ -61,6 +63,7 @@ Average_and_Median_Swap = get_data('Average and Median Swap')
 Average_and_Median_Swappers = get_data('Average and Median Swappers')
 Swap_Actions = get_data('Swap Actions')
 Swappers = get_data('Swappers')
+Total = get_data('Total')
 
 st.subheader('LUNA Swap Overview')
 c1, c2, c3 = st.columns(3)
@@ -91,20 +94,27 @@ fig = px.bar(df, x='Date', y='Volume', color='Action', title='Total Swap Volume 
 fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-fig = go.Figure()
-for i in df['Action'].unique():
-    fig.add_trace(go.Scatter(
-        name=i,
-        x=df.query("Action == @i")['Date'],
-        y=df.query("Action == @i")['Volume'],
-        mode='lines',
-        stackgroup='one',
-        groupnorm='percent'
-     ))
-fig.update_layout(title='Status of Swaps Volume(%Normalized)')
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-
+c1, c2 = st.columns(2)
+df = Swap_Actions
+with c1:
+  fig = go.Figure()
+  for i in df['Action'].unique():
+      fig.add_trace(go.Scatter(
+          name=i,
+          x=df.query("Action == @i")['Date'],
+          y=df.query("Action == @i")['Volume'],
+          mode='lines',
+          stackgroup='one',
+          groupnorm='percent'
+       ))
+  fig.update_layout(title='Status of Swaps Volume(%Normalized)')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:
+  df = Total  
+  fig = px.pie(df, values='Total Volume', names='Action', title='Total Swap Volume')
+  fig.update_layout(legend_title='Action', legend_y=0.5)
+  fig.update_traces(textinfo='percent+label', textposition='inside')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
