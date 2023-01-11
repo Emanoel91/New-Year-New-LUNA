@@ -57,7 +57,7 @@ c1, c2, c3, c4 = st.columns(4)
 with c1:
         st.metric(label='Total Transfers Volume(2023)', value=df['Total Transfers Volume'])
 with c2:
-        st.metric(label='Total Transfers Count(2023)', value=df['Total Transactions Count'])
+        st.metric(label='Total Transfers Count(2023)', value=df['Total Transfers Count'])
 with c3:
         st.metric(label='Total Receivers Count', value=df['Total Transactions Count'])
 with c4:
