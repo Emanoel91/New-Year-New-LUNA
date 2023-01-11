@@ -37,7 +37,7 @@ Terra and its native cryptocurrency is LUNA.
 st.subheader('🎯 Purposes of Dashboard')
 st.write(
     """
-2222
+We created a dashboard documenting significant trends in transactions, wallets, supply, staking, development, or other aspects of the Terra ecosystem.
     """
 )
 
