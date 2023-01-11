@@ -28,7 +28,9 @@ st.subheader('📃 Introduction')
 
 st.write(
     """
-1111
+After the crash of the Terra network, its users and developers made various proposals to restore it. Finally, it was decided that a new network will be launched and 
+its cryptocurrencies will be divided among the users of the previous network with a certain ratio. The new network, which started its work on May 28, 2022, is called 
+Terra and its native cryptocurrency is LUNA.
     """
 )
 
