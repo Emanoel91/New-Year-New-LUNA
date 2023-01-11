@@ -111,10 +111,61 @@ with c1:
   st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
   df = Total  
-  fig = px.pie(df, values='Total Volume', names='Action', title='Total Swap Volume')
+  fig = px.pie(df, values='Total Volume', names='Action', title='Total Swaps Volume')
   fig.update_layout(legend_title='Action', legend_y=0.5)
   fig.update_traces(textinfo='percent+label', textposition='inside')
   st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+  
+# --------------------------------------------------------------------------------------------------------------------
+
+df = Swap_Actions
+fig = px.bar(df, x='Date', y='Transactions Count', color='Action', title='Total Swaps Count per Day', log_y=False)
+fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+c1, c2 = st.columns(2)
+df = Swap_Actions
+with c1:
+  fig = go.Figure()
+  for i in df['Action'].unique():
+      fig.add_trace(go.Scatter(
+          name=i,
+          x=df.query("Action == @i")['Date'],
+          y=df.query("Action == @i")['Transactions Count'],
+          mode='lines',
+          stackgroup='one',
+          groupnorm='percent'
+       ))
+  fig.update_layout(title='Status of Swaps Count(%Normalized)')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:
+  df = Total  
+  fig = px.pie(df, values='	Total Transactions Count', names='Action', title='Total Swaps Count')
+  fig.update_layout(legend_title='Action', legend_y=0.5)
+  fig.update_traces(textinfo='percent+label', textposition='inside')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
