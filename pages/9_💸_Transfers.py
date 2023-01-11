@@ -61,4 +61,13 @@ with c2:
 with c3:
         st.metric(label='Total Receivers Count(2023)', value=df['Total Receivers Count'])
 with c4:
-        st.metric(label='Total Senders Count(2023)', value=df['Total Senders Count']) 
+        st.metric(label='Total Senders Count(2023)', value=df['Total Senders Count'])
+  
+df = LUNA_Transfers
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['Transfers Volume'], name='Transfers Volume'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative Transfers Volume'], name='Cummulative Transfers Volume'), secondary_y=True)
+fig.update_layout(title_text='Transfers Volume per Day')
+fig.update_yaxes(title_text='$LUNA', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
