@@ -133,7 +133,7 @@ with c1:
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
        fig = px.bar(df, x='Action', y='Average TXs Count', color='Year', title='Average TXs Count of each Action', log_y=False, barmode='group')
-       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
 df = Average_Data
@@ -144,7 +144,7 @@ with c1:
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 with c2:
        fig = px.bar(df, x='Action', y='Average Addresses Count', color='Year', title='Average Addresses Count of each Action', log_y=False, barmode='group')
-       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 
 df = Median_Data
@@ -155,7 +155,7 @@ with c1:
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
        fig = px.bar(df, x='Action', y='Median TXs Count', color='Year', title='Median TXs Count of each Action', log_y=False, barmode='group')
-       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
 df = Median_Data
@@ -166,7 +166,7 @@ with c1:
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 with c2:
        fig = px.bar(df, x='Action', y='Median Addresses Count', color='Year', title='Median Addresses Count of each Action', log_y=False, barmode='group')
-       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
     
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------
