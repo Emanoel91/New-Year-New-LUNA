@@ -206,17 +206,17 @@ with c2:
     
     
 df = Top_30_Validators_and_Delegations
-fig = px.scatter(df.sort_values(['Total Delegations Volume', 'Total Delegations Count'], ascending=[True, True]), x='Total Delegations Volume', y='Total Delegations Count', color='Validator', title='Top 30 Validators and Delegations(2023)', log_x=True, log_y=True)
+fig = px.scatter(df.sort_values(['Total Delegations Volume', 'Total Delegations Count'], ascending=[True, True]), x='Total Delegations Volume', y='Total Delegations Count', color='Validator', title='Top 30 Validators and their Delegations(2023)', log_x=True, log_y=True)
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Delegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Top_30_Validators_and_Undelegations
-fig = px.scatter(df.sort_values(['Total Undelegations Volume', 'Total Undelegations Count'], ascending=[True, True]), x='Total Undelegations Volume', y='Total Undelegations Count', color='Validator', title='Top 30 Validators and Undelegations(2023)', log_x=True, log_y=True)
+fig = px.scatter(df.sort_values(['Total Undelegations Volume', 'Total Undelegations Count'], ascending=[True, True]), x='Total Undelegations Volume', y='Total Undelegations Count', color='Validator', title='Top 30 Validators and their Undelegations(2023)', log_x=True, log_y=True)
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Undelegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Top_30_Validators_and_Redelegations
-fig = px.scatter(df.sort_values(['Total Redelegations Volume', 'Total Redelegations Count'], ascending=[True, True]), x='Total Redelegations Volume', y='Total Redelegations Count', color='Validator', title='Top 30 Validators and Redelegations(2023)', log_x=True, log_y=True)
+fig = px.scatter(df.sort_values(['Total Redelegations Volume', 'Total Redelegations Count'], ascending=[True, True]), x='Total Redelegations Volume', y='Total Redelegations Count', color='Validator', title='Top 30 Validators and their Redelegations(2023)', log_x=True, log_y=True)
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Redelegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
