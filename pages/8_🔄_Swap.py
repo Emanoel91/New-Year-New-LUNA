@@ -38,29 +38,60 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-    if query1 == 'Current LUNA Price':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/be07fc87-6d9e-4706-bf89-0aab3fb5fb9e/data/latest')
-    elif query1 == 'Percentage of LUNA price changes in 2023':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/eb503870-b936-4e9d-9901-1a69b0dfc935/data/latest')
-    elif query1 == 'LUNA Price per Day':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b7677888-8e5e-45da-b593-be145726fdac/data/latest')
-    elif query1 == 'Range of Price Change':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/80d32a13-1075-4592-bd4a-088251135465/data/latest')
-    elif query1 == 'LUNA Price Metric':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b265c317-afc6-47b7-91fa-893d5f368988/data/latest')
-    elif query1 == 'Comparison of LUNA price metrics in 2022 and 2023':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5f1b8942-57b2-4fe9-87dd-2210db99ac16/data/latest')
-    elif query1 == 'Circulating Supply':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/dd621ea9-27f5-489d-9b14-4f3990955e94/data/latest')
-    elif query1 == 'Current Circulating Supply ':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/7ae6ccd1-535c-49cc-b84b-d4815f0a2dbf/data/latest')
+    if query1 == 'Buyers Data':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/fb61a268-50f2-4771-9f1e-9a922d690026/data/latest')
+    elif query1 == 'Sellers Data':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d1d47747-7382-45c5-b8e2-b767bc80d668/data/latest')
+    elif query1 == 'Number of New Pools':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/40832512-00b9-4467-a307-e4c8f46d8159/data/latest')
+    elif query1 == 'Average and Median Swap':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/91201621-6905-4c4d-b517-40b31fafbfdf/data/latest')
+    elif query1 == 'Average and Median Swappers':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e3ed4d67-c7c8-4180-a122-b4d60ff6e836/data/latest')
+    elif query1 == 'Swap Actions':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/0ccc6374-10ac-400a-9dd6-e812739ba14c/data/latest')
+    elif query1 == 'Swappers':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/3581a525-11b6-4f95-bc86-2d3cb82bd112/data/latest')
     return None
 
-Current_LUNA_Price = get_data('Current LUNA Price')
-Percentage_of_LUNA_price_changes_in_2023 = get_data('Percentage of LUNA price changes in 2023')
-LUNA_Price_per_Day = get_data('LUNA Price per Day')
-Range_of_Price_Change = get_data('Range of Price Change')
-LUNA_Price_Metric = get_data('LUNA Price Metric')
-Comparison_of_LUNA_price_metrics_in_2022_and_2023 = get_data('Comparison of LUNA price metrics in 2022 and 2023')
-Circulating_Supply = get_data('Circulating Supply')
-Current_Circulating_Supply = get_data('Current Circulating Supply ')
+Buyers_Data = get_data('Buyers Data')
+Sellers_Data = get_data('Sellers Data')
+Number_of_New_Pools = get_data('Number of New Pools')
+Average_and_Median_Swap = get_data('Average and Median Swap')
+Average_and_Median_Swappers = get_data('Average and Median Swappers')
+Swap_Actions = get_data('Swap Actions')
+Swappers = get_data('Swappers')
+
+st.subheader('LUNA Swap Overview')
+c1, c2, c3 = st.columns(3)
+df = Buyers_Data
+with c1:
+        st.metric(label='Total Buying Volume:$LUNA (2023)', value=df['Total Buying Volume'])
+with c2:
+        st.metric(label='Total Buying Count(2023)', value=df['Total Buying Count'])
+with c3:
+        st.metric(label='Total Buyers Count(2023)', value=df['Total Buyers Count'])
+  
+c1, c2, c3 = st.columns(3)
+df = Sellers_Data
+with c1:
+        st.metric(label='Total Selling Volume:$LUNA (2023)', value=df['Total Selling Volume'])
+with c2:
+        st.metric(label='Total Selling Count(2023)', value=df['Total Selling Count'])
+with c3:
+        st.metric(label='Total Sellers Count(2023)', value=df['Total Sellers Count'])  
+  
+c1, c2, c3 = st.columns(3)
+df =   
+with c1:
+        st.metric(label='Total Number of New Pools(2023)', value=df['Total Number of New Pools'])
+
+
+
+
+
+
+
+
+
+
