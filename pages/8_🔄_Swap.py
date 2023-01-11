@@ -158,7 +158,7 @@ c1, c2 = st.columns(2)
 df = Status_of_Swappers_Count
 with c1:
   fig = go.Figure()
-  for i in df['User Type'].unique():
+  for i in df['Type'].unique():
       fig.add_trace(go.Scatter(
           name=i,
           x=df.query("Type == @i")['Date'],
