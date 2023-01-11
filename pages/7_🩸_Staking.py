@@ -126,7 +126,7 @@ fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
   
 df = Average_Data
-c1, c2, c3 = st.columns(3)
+c1, c2= st.columns(2)
 with c1:
        fig = px.bar(df, x='Action', y='Average Volume', color='Year', title='Average Volume of each Action', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
@@ -135,9 +135,15 @@ with c2:
        fig = px.bar(df, x='Action', y='Average TXs Count', color='Year', title='Average TXs Count of each Action', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
-with c3:
+
+df = Average_Data
+c1, c2= st.columns(2)
+with c1:
        fig = px.bar(df, x='Action', y='Average Validators Count', color='Year', title='Average Validators Count of each Action', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='Validators', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
-  
+with c2:
+       fig = px.bar(df, x='Action', y='Average Addresses Count', color='Year', title='Average Addresses Count of each Action', log_y=False, barmode='group')
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
   
