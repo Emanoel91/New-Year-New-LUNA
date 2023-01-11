@@ -102,7 +102,6 @@ with c2:
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Transfers', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
-df = Average_Median_Transfers_Data
 c1, c2= st.columns(2)
 with c1:
        fig = px.bar(df, x='Year', y='Average Senders Count', color='Year', title='Average Daily Senders Count', log_y=False)
@@ -113,7 +112,6 @@ with c2:
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Addresses', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 
-df = Average_Median_Transfers_Data
 c1, c2= st.columns(2)
 with c1:
        fig = px.bar(df, x='Year', y='Median Transfers Volume', color='Year', title='Median Daily Transfers Volume', log_y=False')
@@ -124,7 +122,6 @@ with c2:
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Transfers', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
-df = Average_Median_Transfers_Data
 c1, c2= st.columns(2)
 with c1:
        fig = px.bar(df, x='Year', y='Median Senders Count', color='Year', title='Median Daily Senders Count', log_y=False)
