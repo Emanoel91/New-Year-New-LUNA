@@ -44,7 +44,9 @@ We created a dashboard documenting significant trends in transactions, wallets, 
 st.subheader('🔑 Methodology')
 st.write(
     """
-0000
+In this dashboard, Flipside database is used to extract data related to LUNA currency. All charts show different information from the beginning of 2023 onwards. 
+To check the changes of various metrics related to LUNA currency, the average and median of the data in the new year have been compared with the average and median of 
+the data in December 2022.
     """
 )
 
