@@ -138,9 +138,10 @@ with c1:
        ))
   fig.update_layout(title='Status of Swaps Count(%Normalized)')
   st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+  
 with c2:
   df = Total  
-  fig = px.pie(df, values='	Total Transactions Count', names='Action', title='Total Swaps Count')
+  fig = px.pie(df, values='Total Transactions Count', names='Action', title='Total Number of Swaps')
   fig.update_layout(legend_title='Action', legend_y=0.5)
   fig.update_traces(textinfo='percent+label', textposition='inside')
   st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
