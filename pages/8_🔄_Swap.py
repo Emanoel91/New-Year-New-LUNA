@@ -97,7 +97,7 @@ for i in df['Action'].unique():
         name=i,
         x=df.query("Action == @i")['Date'],
         y=df.query("Action == @i")['Volume'],
-        mode='Bar',
+        mode='Line',
         stackgroup='one',
         groupnorm='percent'
      ))
