@@ -190,16 +190,28 @@ with c1:
        fig = px.bar(df, x='Action', y='Average Volume', color='Year', title='Average Daily Swaps volume(2023)', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    
+       fig = px.bar(df, x='Action', y='Median Volume', color='Year', title='Median Daily Swaps volume(2023)', log_y=False, barmode='group')
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
 with c2:
        fig = px.bar(df, x='Action', y='Average Transactions Count', color='Year', title='Average Daily Swaps Count(2023)', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
-       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    
+       fig = px.bar(df, x='Action', y='Median Transactions Count', color='Year', title='Median Daily Swaps Count(2023)', log_y=False, barmode='group')
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)    
 df = Average_and_Median_Swappers
 c1, c2= st.columns(2)
 with c3:
        fig = px.bar(df, x='User Type', y='Average Users Count', color='Year', title='Average Daily Swappers Count(2023)', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='Swappers', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    
+       fig = px.bar(df, x='User Type', y='Median Users Count', color='Year', title='Median Daily Swappers Count(2023)', log_y=False, barmode='group')
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='Swappers', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)        
 
 
 
