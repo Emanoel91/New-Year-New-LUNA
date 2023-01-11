@@ -82,7 +82,7 @@ with c3:
         st.metric(label='Total Sellers Count(2023)', value=df['Total Sellers Count'])  
   
 c1, c2, c3 = st.columns(3)
-df =   
+df = Number_of_New_Pools  
 with c1:
         st.metric(label='Total Number of New Pools(2023)', value=df['Total Number of New Pools'])
 
