@@ -59,6 +59,6 @@ with c1:
 with c2:
         st.metric(label='Total Transfers Count(2023)', value=df['Total Transfers Count'])
 with c3:
-        st.metric(label='Total Receivers Count', value=df['Total Transactions Count'])
+        st.metric(label='Total Receivers Count', value=df['Total Receivers Count'])
 with c4:
         st.metric(label='Total Senders Count', value=df['Total Senders Count']) 
