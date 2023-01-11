@@ -115,6 +115,15 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 fig = px.bar(df, x='Date', y='Validators Count', color='ACTION', title='Total Validators Count per Day (2023)', log_y=False)
 fig.update_layout(showlegend=True, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+
+df = New_Delegators
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['New Delegators'], name='New Delegators'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative New Delegators'], name='Cummulative New Delegators'), secondary_y=True)
+fig.update_layout(title_text='Number of New Delegators per Day (2023)')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
   
   
   
