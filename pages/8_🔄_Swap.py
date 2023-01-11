@@ -90,7 +90,7 @@ with c1:
         st.metric(label='Total Number of New Pools(2023)', value=df['Total Number of New Pools'])
 
 df = Swap_Actions
-fig = px.bar(df, x='Date', y='Volume', color='Action', title='Total Swap Volume per Day', log_y=False)
+fig = px.bar(df, x='Date', y='Volume', color='Action', title='Total Swap Volume per Day (Log Scale)', log_y=True)
 fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
