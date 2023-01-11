@@ -50,13 +50,6 @@ the data in December 2022.
     """
 )
 
-st.subheader('📖 Guidance')
-st.write(
-    """
-3333
-    """
-)
-
 
 c1, c2, c3 = st.columns(3)
 with c1:
