@@ -191,7 +191,7 @@ with c1:
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
-       fig = px.bar(df, x='Action', y='Average Transactions Count', color='Year', title='Average Daily Swaps Count', log_y=False, barmode='group')
+       fig = px.bar(df, x='Action', y='Average Transactions Count', color='Year', title='Average Daily Swaps Count(2023)', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 df = Average_and_Median_Swappers
