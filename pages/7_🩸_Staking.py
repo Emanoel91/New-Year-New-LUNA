@@ -100,15 +100,15 @@ with c3:
     
 df = Staking
 fig = px.bar(df, x='Date', y='Volume', color='ACTION', title='Total Volume per Day (2023)', log_y=False)
-fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
+fig.update_layout(showlegend=True, xaxis_title=None, legend_title='ACTION', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
   
 fig = px.bar(df, x='Date', y='Action Count', color='ACTION', title='Total Transactions Count per Day (2023)', log_y=False)
-fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+fig.update_layout(showlegend=True, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
   
 fig = px.bar(df, x='Date', y='Addresses Count', color='User Type', title='Total Users Count per Day (2023)', log_y=False)
-fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+fig.update_layout(showlegend=True, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
   
 
