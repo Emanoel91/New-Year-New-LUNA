@@ -158,8 +158,8 @@ with c1:
   for i in df['User Type'].unique():
       fig.add_trace(go.Scatter(
           name=i,
-          x=df.query("User Type == @i")['Date'],
-          y=df.query("User Type == @i")['Users Count'],
+          x=df.query("User_Type == @i")['Date'],
+          y=df.query("User_Type == @i")['Users Count'],
           mode='lines',
           stackgroup='one',
           groupnorm='percent'
