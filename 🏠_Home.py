@@ -39,6 +39,13 @@ st.write(
     """
 )
 
+st.subheader('🔑 Methodology')
+st.write(
+    """
+0000
+    """
+)
+
 st.subheader('📖 Guidance')
 st.write(
     """
