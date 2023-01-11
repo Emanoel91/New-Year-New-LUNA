@@ -177,7 +177,7 @@ with c1:
 df = Total_Swappers
 with c2:
  
-  df = Total  
+   
   fig = px.pie(df, values='Total Users Count', names='User Type', title='Total Number of Swappers')
   fig.update_layout(legend_title='User Type', legend_y=0.5)
   fig.update_traces(textinfo='percent+label', textposition='inside')
