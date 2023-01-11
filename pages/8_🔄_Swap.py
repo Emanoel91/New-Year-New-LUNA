@@ -91,7 +91,18 @@ fig = px.bar(df, x='Date', y='Volume', color='Action', title='Total Swap Volume 
 fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+fig = go.Figure()
+for i in df['Action'].unique():
+    fig.add_trace(go.Scatter(
+        name=i,
+        x=df.query("Action == @i")['Date'],
+        y=df.query("Action == @i")['Volume'],
+        mode='lines',
+        stackgroup='one',
+        groupnorm='percent'
+     ))
+fig.update_layout(title='Status of Swaps Volume(%Normalized)')
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
