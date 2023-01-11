@@ -9,8 +9,8 @@ from PIL import Image
 theme_plotly = None # None or streamlit
 
 # Structure
-st.set_page_config(page_title='Price & Supply - New Year New LUNA', page_icon=':chart_with_upwards_trend:', layout='wide')
-st.title('💵 Price & Supply')
+st.set_page_config(page_title='Staking - New Year New LUNA', page_icon=':chart_with_upwards_trend:', layout='wide')
+st.title('🩸 Staking')
 
 # Cover
 c1 , c2 = st.columns(2)
@@ -38,29 +38,57 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-    if query1 == 'Current LUNA Price':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/be07fc87-6d9e-4706-bf89-0aab3fb5fb9e/data/latest')
-    elif query1 == 'Percentage of LUNA price changes in 2023':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/eb503870-b936-4e9d-9901-1a69b0dfc935/data/latest')
-    elif query1 == 'LUNA Price per Day':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b7677888-8e5e-45da-b593-be145726fdac/data/latest')
-    elif query1 == 'Range of Price Change':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/80d32a13-1075-4592-bd4a-088251135465/data/latest')
-    elif query1 == 'LUNA Price Metric':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b265c317-afc6-47b7-91fa-893d5f368988/data/latest')
-    elif query1 == 'Comparison of LUNA price metrics in 2022 and 2023':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5f1b8942-57b2-4fe9-87dd-2210db99ac16/data/latest')
-    elif query1 == 'Circulating Supply':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/dd621ea9-27f5-489d-9b14-4f3990955e94/data/latest')
-    elif query1 == 'Current Circulating Supply ':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/7ae6ccd1-535c-49cc-b84b-d4815f0a2dbf/data/latest')
+    if query1 == 'Staking':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/aaa4ec8e-e4fb-4750-aa81-5ea6f8ebe42e/data/latest')
+    elif query1 == 'New Delegators':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/fe40ef40-b9a9-4e46-a9de-94ac3f7c34e3/data/latest')
+    elif query1 == 'Average Data':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/5efdda3f-ab5d-4be0-a153-285ca79afbcc/data/latest')
+    elif query1 == 'Median Data':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/be444c96-df64-450d-92bd-42cd490bbab9/data/latest')
+    elif query1 == 'Top 5 Validators Based Delegations Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4557eb21-e024-4146-adf3-6a5eb7c69532/data/latest')
+    elif query1 == 'Number of Delegations on Top Validators':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6681e7c6-b66e-4532-be3b-8bbd333f8db1/data/latest')
+    elif query1 == 'Top 5 Validators Based Delegations Volume':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/702c782e-cd12-4609-b29f-36e6445a684c/data/latest')
+    elif query1 == 'Volume of Delegations on Top Validators':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/314509fa-fcb9-46b1-a0f6-375279bc357c/data/latest')
+    elif query1 == 'Top 5 Validators Based Delegators Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e73903ca-50f9-4d91-a15d-8e74dbb48175/data/latest')
+    elif query1 == 'Number of Delegators on Top Validators':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/f355c76a-7778-4e80-87b0-ec8c24a666f9/data/latest')
+    elif query1 == 'Total Actions':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b32a5716-bf03-43f1-a1c6-d6b6710f101c/data/latest')
+    elif query1 == 'Top 30 Validators and Delegations':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/33fbefbd-cdcc-44bf-83f9-cd622e95a569/data/latest')
+    elif query1 == 'Top 30 Validators and Undelegations':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/2dfeff1c-a3e3-4a34-8093-6028ccdb2331/data/latest')
+    elif query1 == 'Top 30 Validators and Redelegations':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/619b6a48-984c-444f-9a32-4756c14eff7c/data/latest')
     return None
 
-Current_LUNA_Price = get_data('Current LUNA Price')
-Percentage_of_LUNA_price_changes_in_2023 = get_data('Percentage of LUNA price changes in 2023')
-LUNA_Price_per_Day = get_data('LUNA Price per Day')
-Range_of_Price_Change = get_data('Range of Price Change')
-LUNA_Price_Metric = get_data('LUNA Price Metric')
-Comparison_of_LUNA_price_metrics_in_2022_and_2023 = get_data('Comparison of LUNA price metrics in 2022 and 2023')
-Circulating_Supply = get_data('Circulating Supply')
-Current_Circulating_Supply = get_data('Current Circulating Supply ')
+Staking = get_data('Staking')
+New_Delegators = get_data('New Delegators')
+Average_Data = get_data('Average Data')
+Median_Data = get_data('Median Data')
+Top_5_Validators_Based_Delegations_Count = get_data('Top 5 Validators Based Delegations Count')
+Number_of_Delegations_on_Top_Validators = get_data('Number of Delegations on Top Validators')
+Top_5_Validators_Based_Delegations_Volume = get_data('Top 5 Validators Based Delegations Volume')
+Volume_of_Delegations_on_Top_Validators = get_data('Volume of Delegations on Top Validators')
+Top_5_Validators_Based_Delegators_Count = get_data('Top 5 Validators Based Delegators Count')
+Number_of_Delegators_on_Top_Validators = get_data('Number of Delegators on Top Validators')
+Total_Actions = get_data('Total Actions')
+Top_30_Validators_and_Delegations = get_data('Top 30 Validators and Delegations')
+Top_30_Validators_and_Undelegations = get_data('Top 30 Validators and Undelegations')
+Top_30_Validators_and_Redelegations = get_data('Top 30 Validators and Redelegations')
+
+df = Total_Actions
+c1, c2, c3 = st.columns(3)
+with c1:
+       fig = px.bar(df, x='ACTION', y='Total Users Count', color='ACTION', title='Total Users Count', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:
+ 
+with c3: 
