@@ -168,3 +168,38 @@ with c2:
        fig = px.bar(df, x='Action', y='Median Addresses Count', color='Year', title='Median Addresses Count of each Action', log_y=False, barmode='group')
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+    
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------
+df = Top_5_Validators_Based_Delegations_Count
+c1, c2= st.columns(2)
+with c1:
+       fig = px.bar(df, x='Validator', y='Delegations Count', color='Validator', title='Top 5 Validators Based Delegations Count', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+df = Number_of_Delegations_on_Top_Validators
+with c2:
+       fig = px.bar(df, x='Date', y='Delegations Count', color='Validator', title='Number of Delegations on Top Validators', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+df = Top_5_Validators_Based_Delegations_Volume
+c1, c2= st.columns(2)
+with c1:
+       fig = px.bar(df, x='Validator', y='Delegation Volume', color='Validator', title='Top 5 Validators Based Delegations Volume', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
+df = Volume_of_Delegations_on_Top_Validators
+with c2:
+       fig = px.bar(df, x='Date', y='Delegations Volume', color='Validator', title='Volume of Delegations on Top Validators', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+df = Top_5_Validators_Based_Delegators_Count
+c1, c2= st.columns(2)
+with c1:
+       fig = px.bar(df, x='Validator', y='Delegator Count', color='Validator', title='Top 5 Validators Based Delegators Count', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
+df = Number_of_Delegators_on_Top_Validators
+with c2:
+       fig = px.bar(df, x='Date', y='Delegators Count', color='Validator', title='Number of Delegators on Top Validators', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title=' ', yaxis_title=' ', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
