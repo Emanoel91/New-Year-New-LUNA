@@ -86,14 +86,14 @@ Top_30_Validators_and_Redelegations = get_data('Top 30 Validators and Redelegati
 df = Total_Actions
 c1, c2, c3 = st.columns(3)
 with c1:
-       fig = px.bar(df, x='ACTION', y='Total Users Count', color='ACTION', title='Total Users Count', log_y=False)
+       fig = px.bar(df, x='ACTION', y='Total Users Count', color='ACTION', title='Total Users Count (2023)', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
-       fig = px.bar(df, x='ACTION', y='Total Amount', color='ACTION', title='Total Amount', log_y=False)
+       fig = px.bar(df, x='ACTION', y='Total Amount', color='ACTION', title='Total Amount (2023)', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 with c3: 
-       fig = px.bar(df, x='ACTION', y='Total Transactions Count', color='ACTION', title='Total Transactions Count', log_y=False)
+       fig = px.bar(df, x='ACTION', y='Total Transactions Count', color='ACTION', title='Total Transactions Count (2023)', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='ACTION', yaxis_title='', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
