@@ -120,7 +120,7 @@ df = New_Delegators
 fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
 fig.add_trace(go.Bar(x=df['Date'], y=df['New Delegators'], name='New Delegators'), secondary_y=False)
 fig.add_trace(go.Line(x=df['Date'], y=df['Cummulative New Delegators'], name='Cummulative New Delegators'), secondary_y=True)
-fig.update_layout(title_text='Number of New Delegators per Day (2023)')
+fig.update_layout(title_text='Number of New Delegators per Day')
 fig.update_yaxes(title_text='', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
@@ -173,7 +173,7 @@ with c2:
 df = Top_5_Validators_Based_Delegations_Count
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Validator', y='Delegations Count', color='Validator', title='Top 5 Validators Based Delegations Count', log_y=False)
+       fig = px.bar(df, x='Validator', y='Delegations Count', color='Validator', title='Top 5 Validators Based Delegations Count(2023)', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 df = Number_of_Delegations_on_Top_Validators
@@ -184,7 +184,7 @@ with c2:
 df = Top_5_Validators_Based_Delegations_Volume
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Validator', y='Delegation Volume', color='Validator', title='Top 5 Validators Based Delegations Volume', log_y=False)
+       fig = px.bar(df, x='Validator', y='Delegation Volume', color='Validator', title='Top 5 Validators Based Delegations Volume(2023)', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 df = Volume_of_Delegations_on_Top_Validators
@@ -195,7 +195,7 @@ with c2:
 df = Top_5_Validators_Based_Delegators_Count
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Validator', y='Delegator Count', color='Validator', title='Top 5 Validators Based Delegators Count', log_y=False)
+       fig = px.bar(df, x='Validator', y='Delegator Count', color='Validator', title='Top 5 Validators Based Delegators Count(2023)', log_y=False)
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 df = Number_of_Delegators_on_Top_Validators
@@ -206,17 +206,17 @@ with c2:
     
     
 df = Top_30_Validators_and_Delegations
-fig = px.scatter(df.sort_values(['Total Delegations Volume', 'Total Delegations Count'], ascending=[True, True]), x='Total Delegations Volume', y='Total Delegations Count', color='Validator', title='Top 30 Validators and Delegations', log_x=True, log_y=True)
+fig = px.scatter(df.sort_values(['Total Delegations Volume', 'Total Delegations Count'], ascending=[True, True]), x='Total Delegations Volume', y='Total Delegations Count', color='Validator', title='Top 30 Validators and Delegations(2023)', log_x=True, log_y=True)
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Delegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Top_30_Validators_and_Undelegations
-fig = px.scatter(df.sort_values(['Total Undelegations Volume', 'Total Undelegations Count'], ascending=[True, True]), x='Total Undelegations Volume', y='Total Undelegations Count', color='Validator', title='Top 30 Validators and Undelegations', log_x=True, log_y=True)
+fig = px.scatter(df.sort_values(['Total Undelegations Volume', 'Total Undelegations Count'], ascending=[True, True]), x='Total Undelegations Volume', y='Total Undelegations Count', color='Validator', title='Top 30 Validators and Undelegations(2023)', log_x=True, log_y=True)
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Undelegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Top_30_Validators_and_Redelegations
-fig = px.scatter(df.sort_values(['Total Redelegations Volume', 'Total Redelegations Count'], ascending=[True, True]), x='Total Redelegations Volume', y='Total Redelegations Count', color='Validator', title='Top 30 Validators and Redelegations', log_x=True, log_y=True)
+fig = px.scatter(df.sort_values(['Total Redelegations Volume', 'Total Redelegations Count'], ascending=[True, True]), x='Total Redelegations Volume', y='Total Redelegations Count', color='Validator', title='Top 30 Validators and Redelegations(2023)', log_x=True, log_y=True)
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Redelegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
