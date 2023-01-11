@@ -125,7 +125,7 @@ fig.update_yaxes(title_text='', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
   
-df = Total_Actions
+df = Average_Data
 c1, c2, c3 = st.columns(3)
 with c1:
        fig = px.bar(df, x='Action', y='Average Volume', color='Year', title='Average Volume of each Action', log_y=False)
