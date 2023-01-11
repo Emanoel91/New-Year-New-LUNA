@@ -128,8 +128,8 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 df = Average_Data
 c1, c2, c3 = st.columns(3)
 with c1:
-       fig = px.bar(df, x='Action', y='Average Volume', color='Year', title='Average Volume of each Action', log_y=False)
-       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Action', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
+       fig = px.bar(df, x='Action', y='Average Volume', color='Year', title='Average Volume of each Action', log_y=False, barmode='group')
+       fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
  
   
