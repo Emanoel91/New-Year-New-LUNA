@@ -94,40 +94,40 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 df = Average_Median_Transfers_Data
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Year', y='Average Transfers Volume', color='Year', title='Average Daily Transfers Volume', log_y=False')
+       fig = px.bar(df, x='Year', y='Average Transfers Volume', color='Year', title='Average Daily Transfers Volume')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
-       fig = px.bar(df, x='Year', y='Average Transfers Count', color='Year', title='Average Daily Transfers Count', log_y=False)
+       fig = px.bar(df, x='Year', y='Average Transfers Count', color='Year', title='Average Daily Transfers Count')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Transfers', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Year', y='Average Senders Count', color='Year', title='Average Daily Senders Count', log_y=False)
+       fig = px.bar(df, x='Year', y='Average Senders Count', color='Year', title='Average Daily Senders Count')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Addresses', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 with c2:
-       fig = px.bar(df, x='Year', y='Average Receivers Count', color='Year', title='Average Daily Receivers Count', log_y=False)
+       fig = px.bar(df, x='Year', y='Average Receivers Count', color='Year', title='Average Daily Receivers Count')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Addresses', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Year', y='Median Transfers Volume', color='Year', title='Median Daily Transfers Volume', log_y=False')
+       fig = px.bar(df, x='Year', y='Median Transfers Volume', color='Year', title='Median Daily Transfers Volume')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
-       fig = px.bar(df, x='Year', y='Median Transfers Count', color='Year', title='Median Daily Transfers Count', log_y=False)
+       fig = px.bar(df, x='Year', y='Median Transfers Count', color='Year', title='Median Daily Transfers Count')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Transfers', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
 c1, c2= st.columns(2)
 with c1:
-       fig = px.bar(df, x='Year', y='Median Senders Count', color='Year', title='Median Daily Senders Count', log_y=False)
+       fig = px.bar(df, x='Year', y='Median Senders Count', color='Year', title='Median Daily Senders Count')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Addresses', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
 with c2:
-       fig = px.bar(df, x='Year', y='Median Receivers Count', color='Year', title='Median Daily Receivers Count', log_y=False)
+       fig = px.bar(df, x='Year', y='Median Receivers Count', color='Year', title='Median Daily Receivers Count')
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Year', yaxis_title='Addresses', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
