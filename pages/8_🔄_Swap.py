@@ -56,6 +56,8 @@ def get_data(query1):
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/859ea2b8-d532-43b7-9ef1-8cd91a46c77a/data/latest')
     elif query1 == 'Status of Swappers Count':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/65e1d0f7-c8fc-421d-8178-b40ab38c0ec2/data/latest')
+    elif query1 == 'Total Swappers':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e3e8878e-4b4d-4d83-9a3f-4ca5584e67ea/data/latest')
     return None
 
 Buyers_Data = get_data('Buyers Data')
@@ -67,6 +69,7 @@ Swap_Actions = get_data('Swap Actions')
 Swappers = get_data('Swappers')
 Total = get_data('Total')
 Status_of_Swappers_Count = get_data('Status of Swappers Count')
+Total_Swappers = get_data('Total Swappers')
 
 st.subheader('LUNA Swap Overview')
 c1, c2, c3 = st.columns(3)
@@ -169,8 +172,16 @@ with c1:
        ))
   fig.update_layout(title='Status of Swappers Count(%Normalized)')
   st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-
+  
+  
+df = Total_Swappers
+with c2:
+ 
+  df = Total  
+  fig = px.pie(df, values='Total Users Count', names='User Type', title='Total Number of Swappers')
+  fig.update_layout(legend_title='User Type', legend_y=0.5)
+  fig.update_traces(textinfo='percent+label', textposition='inside')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
