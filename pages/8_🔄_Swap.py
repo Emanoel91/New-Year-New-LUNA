@@ -151,7 +151,21 @@ fig = px.bar(df, x='Date', y='Users Count', color='User Type', title='Total Numb
 fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxis_title='Addresses', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+c1, c2 = st.columns(2)
+df = Swappers
+with c1:
+  fig = go.Figure()
+  for i in df['User Type'].unique():
+      fig.add_trace(go.Scatter(
+          name=i,
+          x=df.query("User Type == @i")['Date'],
+          y=df.query("User Type == @i")['Users Count'],
+          mode='lines',
+          stackgroup='one',
+          groupnorm='percent'
+       ))
+  fig.update_layout(title='Status of Swappers Count(%Normalized)')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
