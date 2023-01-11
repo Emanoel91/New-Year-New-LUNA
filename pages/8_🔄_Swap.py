@@ -54,6 +54,8 @@ def get_data(query1):
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/3581a525-11b6-4f95-bc86-2d3cb82bd112/data/latest')
     elif query1 == 'Total':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/859ea2b8-d532-43b7-9ef1-8cd91a46c77a/data/latest')
+    elif query1 == 'Status of Swappers Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/65e1d0f7-c8fc-421d-8178-b40ab38c0ec2/data/latest')
     return None
 
 Buyers_Data = get_data('Buyers Data')
@@ -64,6 +66,7 @@ Average_and_Median_Swappers = get_data('Average and Median Swappers')
 Swap_Actions = get_data('Swap Actions')
 Swappers = get_data('Swappers')
 Total = get_data('Total')
+Status_of_Swappers_Count = get_data('Status of Swappers Count')
 
 st.subheader('LUNA Swap Overview')
 c1, c2, c3 = st.columns(3)
@@ -152,14 +155,14 @@ fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Action', yaxi
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 c1, c2 = st.columns(2)
-df = Swappers
+df = Status_of_Swappers_Count
 with c1:
   fig = go.Figure()
   for i in df['User Type'].unique():
       fig.add_trace(go.Scatter(
           name=i,
-          x=df.query("User_Type == @i")['Date'],
-          y=df.query("User_Type == @i")['Users Count'],
+          x=df.query("Type == @i")['Date'],
+          y=df.query("Type == @i")['Users Count'],
           mode='lines',
           stackgroup='one',
           groupnorm='percent'
