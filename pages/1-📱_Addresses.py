@@ -12,24 +12,16 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Addresses - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('📱 Addresses')
 
-# Cover
-c1 , c2 = st.columns(2)
 
-#c1.image(Image.open('Images/transactions.JPG'))
 
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
+st.write(
+    """
+**Active Address**:  An address is considered active as soon as it becomes a direct participant in a successful transaction.
+
+**New Address**: A new address refers to an address that has recorded its first transaction.
+
+    """
+)
 
 # dash_style
 with open('style.css')as f:
