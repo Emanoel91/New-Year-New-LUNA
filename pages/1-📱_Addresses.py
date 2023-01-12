@@ -16,9 +16,9 @@ st.title('📱 Addresses')
 
 st.write(
     """
-**Active Address**:  An address is considered active as soon as it becomes a direct participant in a successful transaction.
+**1️⃣ Active Address**:  An address is considered active as soon as it becomes a direct participant in a successful transaction.
 
-**New Address**: A new address refers to an address that has recorded its first transaction.
+**2️⃣ New Address**: A new address refers to an address that has recorded its first transaction.
 
     """
 )
