@@ -9,7 +9,7 @@ from PIL import Image
 theme_plotly = None # None or streamlit
 
 # Structure
-st.set_page_config(page_title='Swap - New Year New LUNA', page_icon=':chart_with_upwards_trend:', layout='wide')
+st.set_page_config(page_title='Swap - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('🔄 Swap')
 
 # Cover
