@@ -12,25 +12,6 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Price & Supply - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('💵 Price & Supply')
 
-# Cover
-c1 , c2 = st.columns(2)
-
-#c1.image(Image.open('Images/transactions.JPG'))
-
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
-
 # dash_style
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
@@ -66,6 +47,16 @@ Circulating_Supply = get_data('Circulating Supply')
 Current_Circulating_Supply = get_data('Current Circulating Supply ')
 
 st.subheader('💰 LUNA Price')
+
+st.subheader('📃 definitions')
+st.write(
+    """
+**1️⃣ Moving Average (MA)**: A moving average is a statistic that captures the average change in a data series over time. A moving average (MA) is a stock indicator 
+commonly used in technical analysis, used to help smooth out price data by creating a constantly updated average price. A rising moving average indicates that the 
+security is in an uptrend, while a declining moving average indicates a downtrend.
+    """
+)
+
 df = Current_LUNA_Price
 c1, c2 = st.columns(2)
     
@@ -96,6 +87,17 @@ fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$USD', xaxis
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.subheader('🟡 LUNA Supply')
+
+st.subheader('📃 definitions')
+st.write(
+    """
+**1️⃣ Total Supply**: The amount of coins that have been already created, minus any coins that have been burned.
+
+**2️⃣ Circulating Supply**: The amount of coins that are circulating in the market and are in public hands. 
+    """
+
+
+
 df = Current_Circulating_Supply 
 c1, c2, c3 = st.columns(3)
 
