@@ -41,12 +41,14 @@ def get_data(query1):
     if query1 == 'Statistics':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6ed60ef6-b640-4fb9-a720-1104d909734f/data/latest')
     elif query1 == 'Transactions Count':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d2ab8450-d214-4fc4-90a8-b6b258c4c573/data/latest')   
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d2ab8450-d214-4fc4-90a8-b6b258c4c573/data/latest')
+    elif query1 == 'Transactions Status':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d3605635-4543-4b5d-af72-61bcbdae439e/data/latest')       
     return None
 
 Statistics = get_data('Statistics')
 Transactions_Count = get_data('Transactions Count')
-
+Transactions_Status = get_data('Transactions Status')
 
 df = Statistics
 c1, c2, c3 = st.columns(3)
@@ -66,7 +68,28 @@ fig = px.bar(df, x='Date', y='TXs Count', color='Tx Succeeded', title='Number of
 fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Tx Succeeded', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+c1, c2 = st.columns(2)
+df = Transactions_Count
+with c1:
+  fig = go.Figure()
+  for i in df['Tx Succeeded'].unique():
+      fig.add_trace(go.Scatter(
+          name=i,
+          x=df.query("Tx Succeeded == @i")['Date'],
+          y=df.query("Tx Succeeded == @i")['TXs Count'],
+          mode='lines',
+          stackgroup='one',
+          groupnorm='percent'
+       ))
+  fig.update_layout(title='Status of Transactions(%Normalized)')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+   
+with c2:
+  df = Transactions_Status  
+  fig = px.pie(df, values='TXs Count', names='Tx Succeeded', title='Total Transactions Count')
+  fig.update_layout(legend_title='Tx Succeeded', legend_y=0.5)
+  fig.update_traces(textinfo='percent+label', textposition='inside')
+  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
