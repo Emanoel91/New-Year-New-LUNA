@@ -12,16 +12,6 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='NFTs - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('📸 NFTs')
 
-st.subheader('📃 definitions')
-st.write(
-    """
-**1️⃣ NFT**: NFT means non-fungible tokens (NFTs), which are generally created using the same type of programming used for cryptocurrencies. In simple terms these 
-cryptographic assets are based on blockchain technology. 
-
-**2️⃣ Minting**: Minting an NFT, or non-fungible token, is publishing a unique digital asset on a blockchain.
-    """
-)
-
 # dash_style
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
@@ -321,4 +311,12 @@ with c2:
         fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Collection', yaxis_title='Purchasers Count', xaxis={'categoryorder':'total ascending'})
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)       
        
-       
+st.subheader('📃 Appendix')
+st.write(
+    """
+**NFT** means non-fungible tokens (NFTs), which are generally created using the same type of programming used for cryptocurrencies. In simple terms these 
+cryptographic assets are based on blockchain technology. 
+
+**Minting** an NFT, or non-fungible token, is publishing a unique digital asset on a blockchain.
+    """
+)         
