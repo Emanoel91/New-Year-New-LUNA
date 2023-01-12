@@ -102,13 +102,13 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 st.subheader('📃 Appendix')
 st.write(
     """
-**1️⃣ Moving Average (MA)**: A moving average is a statistic that captures the average change in a data series over time. A moving average (MA) is a stock indicator 
+**Moving Average (MA)**: A moving average is a statistic that captures the average change in a data series over time. A moving average (MA) is a stock indicator 
 commonly used in technical analysis, used to help smooth out price data by creating a constantly updated average price. A rising moving average indicates that the 
 security is in an uptrend, while a declining moving average indicates a downtrend.
 
-**2️⃣ Total Supply**: The amount of coins that have been already created, minus any coins that have been burned.
+**Total Supply**: The amount of coins that have been already created, minus any coins that have been burned.
              
-**3️⃣ Circulating Supply**: The amount of coins that are circulating in the market and are in public hands. 
+**Circulating Supply**: The amount of coins that are circulating in the market and are in public hands. 
 
     """
 )
