@@ -12,24 +12,7 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Swap - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('🔄 Swap')
 
-# Cover
-c1 , c2 = st.columns(2)
 
-#c1.image(Image.open('Images/transactions.JPG'))
-
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
 
 # dash_style
 with open('style.css')as f:
@@ -216,27 +199,11 @@ with c3:
 st.subheader('📃 Appendix')
 st.write(
     """
-**1️⃣ Swapping**: Crypto swapping allows users to instantly trade one cryptocurrency for another, with no crypto-to-fiat exchange required. Saving time and paying less 
+**Swapping**: Crypto swapping allows users to instantly trade one cryptocurrency for another, with no crypto-to-fiat exchange required. Saving time and paying less 
 in fees are obvious benefits, but it’s far from the only reason users participate in swapping. Crypto tokens are effectively the keys to their native blockchain’s 
 kingdom, affording holders various benefits within their ecosystems. Token holders may have the opportunity to vote on community governance proposals that guide the 
 future of a project or stake their share in exchange for passive interest income. Swapping makes it easier for crypto users to explore the further reaches of the 
 blockchain, and be a part of multiple projects they wish to support.
     """
 ) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
