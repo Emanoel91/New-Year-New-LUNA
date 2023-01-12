@@ -70,7 +70,6 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 c1, c2 = st.columns(2)
 df = Transactions_Count
-with c1:
    
 with c2:
       df = Transactions_Status  
