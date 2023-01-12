@@ -38,14 +38,37 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-    if query1 == 'LUNA Transfers':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b8139ea6-2c16-4073-a55d-13db530d01b6/data/latest')
-    elif query1 == 'Total Transfers Data':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/41f518da-9a93-4559-b832-94cf4b0b3b3a/data/latest')
-    elif query1 == 'Average & Median Transfers Data':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/bec2bf74-52c9-4562-8fc9-5856ea397868/data/latest')
+    if query1 == 'Statistics':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6ed60ef6-b640-4fb9-a720-1104d909734f/data/latest')
     return None
 
-LUNA_Transfers = get_data('LUNA Transfers')
-Total_Transfers_Data = get_data('Total Transfers Data')
-Average_Median_Transfers_Data = get_data('Average & Median Transfers Data')
+Statistics = get_data('Statistics')
+
+df = Statistics
+c1, c2, c3 = st.columns(3)
+with c1:
+        st.metric(label='Total Transactions Count(2023)', value=df['Total TXs Count'])
+with c2:
+        st.metric(label='Total Blocks Count(2023)', value=df['Total Blocks Count'])
+with c3: 
+        st.metric(label='Total TX Fees:$LUNA(2023)', value=df['Total TX Fee'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
