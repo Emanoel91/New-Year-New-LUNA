@@ -83,8 +83,8 @@ with c2:
       for i in df['Success'].unique():
           fig.add_trace(go.Scatter(
               name=i,
-              x=df.query("Success == @i")['Date'],
-              y=df.query("Success == @i")['TXs Count'],
+              x=df.query1("Success == @i")['Date'],
+              y=df.query1("Success == @i")['TXs Count'],
               mode='lines',
               stackgroup='one',
               groupnorm='percent'
