@@ -77,7 +77,8 @@ with c1:
       fig.update_layout(legend_title='Success', legend_y=0.5)
       fig.update_traces(textinfo='percent+label', textposition='inside')
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
+      
+df = Transactions_Count
 with c2:
       fig = go.Figure()
       for i in df['Success'].unique():
