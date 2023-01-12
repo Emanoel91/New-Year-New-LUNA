@@ -48,10 +48,14 @@ df = Statistics
 c1, c2, c3 = st.columns(3)
 with c1:
         st.metric(label='Total Transactions Count(2023)', value=df['Total TXs Count'])
+        st.metric(label='Average TPM(2023)', value=df['Average TPM'])  
+        st.metric(label='Average TX per Block(2023)', value=df['Average TX per Block'])    
 with c2:
         st.metric(label='Total Blocks Count(2023)', value=df['Total Blocks Count'])
+        st.metric(label='Average TX Fee(2023)', value=df['Average TX Fee'])        
 with c3: 
         st.metric(label='Total TX Fees:$LUNA(2023)', value=df['Total TX Fee'])
+        st.metric(label='Average TX per Wallet(2023)', value=df['Average TX per Wallet'])        
 
 
 
