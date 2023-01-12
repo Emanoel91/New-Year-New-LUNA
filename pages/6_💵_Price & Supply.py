@@ -48,15 +48,6 @@ Current_Circulating_Supply = get_data('Current Circulating Supply ')
 
 st.subheader('💰 LUNA Price')
 
-st.subheader('📃 definitions')
-st.write(
-    """
-**1️⃣ Moving Average (MA)**: A moving average is a statistic that captures the average change in a data series over time. A moving average (MA) is a stock indicator 
-commonly used in technical analysis, used to help smooth out price data by creating a constantly updated average price. A rising moving average indicates that the 
-security is in an uptrend, while a declining moving average indicates a downtrend.
-    """
-)
-
 df = Current_LUNA_Price
 c1, c2 = st.columns(2)
     
@@ -88,16 +79,6 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.subheader('🟡 LUNA Supply')
 
-st.subheader('📃 definitions')
-st.write(
-    """  
-**1️⃣ Tota  l Supply**: The amount of coins that have been already created, minus any coins that have been burned.
-             
-**2️⃣ Circulating Supply**: The amount of coins that are circulating in the market and are in public hands. 
-    """  
-         )
-
-
 df = Current_Circulating_Supply 
 c1, c2, c3 = st.columns(3)
 
@@ -116,3 +97,19 @@ fig.update_layout(title_text='Circulating Supply per Day')
 fig.update_yaxes(title_text='$LUNA', secondary_y=False)
 fig.update_yaxes(title_text='%', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
+st.subheader('📃 Appendix')
+st.write(
+    """
+**1️⃣ Moving Average (MA)**: A moving average is a statistic that captures the average change in a data series over time. A moving average (MA) is a stock indicator 
+commonly used in technical analysis, used to help smooth out price data by creating a constantly updated average price. A rising moving average indicates that the 
+security is in an uptrend, while a declining moving average indicates a downtrend.
+
+**2️⃣ Total Supply**: The amount of coins that have been already created, minus any coins that have been burned.
+             
+**3️⃣ Circulating Supply**: The amount of coins that are circulating in the market and are in public hands. 
+
+    """
+)
+
