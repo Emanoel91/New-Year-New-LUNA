@@ -12,15 +12,6 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Development - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('🛠 Development')
 
-st.subheader('📃 definitions')
-st.write(
-    """
-**1️⃣ Contract**:  A contract is self-executing code that carries out a set of instructions, which are then verified on the blockchain. These contracts are 
-trustless, autonomous, decentralized, and transparent; they are irreversible and unmodifiable once deployed.
-
-    """
-)
-
 # dash_style
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
@@ -68,3 +59,11 @@ with c2:
         fig = px.bar(df, x='Year', y='Median', title='🟡 Daily Median Number of New Contracts')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+st.subheader('📃 Appendix')
+st.write(
+    """
+**Contract**:  A contract is self-executing code that carries out a set of instructions, which are then verified on the blockchain. These contracts are 
+trustless, autonomous, decentralized, and transparent; they are irreversible and unmodifiable once deployed.
+    """
+) 
