@@ -61,10 +61,7 @@ with c3:
         st.metric(label='Total TX Fees:$LUNA(2023)', value=df['Total TX Fee'])
         st.metric(label='Average TX per Wallet(2023)', value=df['Average TX per Wallet'])    
    
-df = Transactions_Count
-fig = px.bar(df, x='Date', y='TXs Count', color='TX_SUCCEEDED', title='Number of Transactions per Day', log_y=False)
-fig.update_layout(showlegend=True, xaxis_title=None, legend_title='TX_SUCCEEDED', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
 
 
 
