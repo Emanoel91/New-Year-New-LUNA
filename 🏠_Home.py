@@ -35,12 +35,12 @@ st.write(
     """
 We created a dashboard documenting significant trends in **transactions**, **wallets**, **supply**, **staking**, **development**, or other aspects of the **Terra ecosystem.**
 
-In page '📱Addresses', the number of active addresses and new wallets in 2023 is shown. In page '🛠Development', users can see the number of new contracts in 2023. 
-In page '💧LP Actions', all actions, whether providing or withdrawing liquidity in the new year, are monitored. NFTs are considered one of the most attractive ideas 
-in the blockchain world. In page '📸NFTs', all activities related to minting and buying and selling NFTs using LUNA currency can be seen. All information about the price and 
-supply of LUNA can be accessed in page '💵Price & Supply'. Staking is when users lock crypto assets for a set period of time to help support the operation of a blockchain. 
-All information related to staking of LUNA currency is collected in page '🩸Staking'. The data related to the LUNA swap is shown in 
-page '🔄Swap'. Refer to page '💸Transfers' to view the status of LUNA transfers between different addresses. In page '💳Transactions', the number of transactions and the amount of fees paid are shown.
+In page '**📱Addresses**', the number of active addresses and new wallets in 2023 is shown. In page '**🛠Development**', users can see the number of new contracts in 2023. 
+In page '**💧LP Actions**', all actions, whether providing or withdrawing liquidity in the new year, are monitored. NFTs are considered one of the most attractive ideas 
+in the blockchain world. In page '**📸NFTs**', all activities related to minting and buying and selling NFTs using LUNA currency can be seen. All information about the price and 
+supply of LUNA can be accessed in page '**💵Price & Supply**'. Staking is when users lock crypto assets for a set period of time to help support the operation of a blockchain. 
+All information related to staking of LUNA currency is collected in page '**🩸Staking**'. The data related to the LUNA swap is shown in 
+page '**🔄Swap**'. Refer to page '**💸Transfers**' to view the status of LUNA transfers between different addresses. In page '**💳Transactions**', the number of transactions and the amount of fees paid are shown.
     """
 )
 
