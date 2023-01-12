@@ -40,9 +40,13 @@ with open('style.css')as f:
 def get_data(query1):
     if query1 == 'Statistics':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/6ed60ef6-b640-4fb9-a720-1104d909734f/data/latest')
+    elif query1 == 'Transactions Count':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d2ab8450-d214-4fc4-90a8-b6b258c4c573/data/latest')   
     return None
 
 Statistics = get_data('Statistics')
+Transactions_Count = get_data('Transactions Count')
+
 
 df = Statistics
 c1, c2, c3 = st.columns(3)
@@ -55,7 +59,22 @@ with c2:
         st.metric(label='Average TX Fee(2023)', value=df['Average TX Fee'])        
 with c3: 
         st.metric(label='Total TX Fees:$LUNA(2023)', value=df['Total TX Fee'])
-        st.metric(label='Average TX per Wallet(2023)', value=df['Average TX per Wallet'])        
+        st.metric(label='Average TX per Wallet(2023)', value=df['Average TX per Wallet'])    
+   
+df = Transactions_Count
+fig = px.bar(df, x='Date', y='TXs Count', color='TX_SUCCEEDED', title='Number of Transactions per Day', log_y=False)
+fig.update_layout(showlegend=True, xaxis_title=None, legend_title='TX_SUCCEEDED', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+
+
+
+
+
+
+
+
+
 
 
 
