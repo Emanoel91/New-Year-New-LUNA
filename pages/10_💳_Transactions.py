@@ -71,25 +71,25 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 c1, c2 = st.columns(2)
 df = Transactions_Count
 with c1:
-  fig = go.Figure()
-  for i in df['Success'].unique():
-      fig.add_trace(go.Scatter(
-          name=i,
-          x=df.query("Success == @i")['Date'],
-          y=df.query("Success == @i")['TXs Count'],
-          mode='lines',
-          stackgroup='one',
-          groupnorm='percent'
-       ))
-  fig.update_layout(title='Status of Transactions(%Normalized)')
-  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+      fig = go.Figure()
+      for i in df['Success'].unique():
+          fig.add_trace(go.Scatter(
+              name=i,
+              x=df.query("Success == @i")['Date'],
+              y=df.query("Success == @i")['TXs Count'],
+              mode='lines',
+              stackgroup='one',
+              groupnorm='percent'
+           ))
+      fig.update_layout(title='Status of Transactions(%Normalized)')
+      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
    
 with c2:
-  df = Transactions_Status  
-  fig = px.pie(df, values='TXs Count', names='Success', title='Total Transactions Count')
-  fig.update_layout(legend_title='Success', legend_y=0.5)
-  fig.update_traces(textinfo='percent+label', textposition='inside')
-  st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+      df = Transactions_Status  
+      fig = px.pie(df, values='TXs Count', names='Success', title='Total Transactions Count')
+      fig.update_layout(legend_title='Success', legend_y=0.5)
+      fig.update_traces(textinfo='percent+label', textposition='inside')
+      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
