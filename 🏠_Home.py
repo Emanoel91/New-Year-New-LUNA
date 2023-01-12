@@ -1,12 +1,3 @@
-# Descriptions:
-# Help Metrics DAO create the ultimate collection of on-chain analytics, data, and insights with our new Megadashboards challenge! These are serious challenges that 
-# require plenty of work — and offer increased payouts in return. Read on for more info:
-# We’re putting together the ultimate analytics tool for the NEAR ecosystem, a dazzling dashboard full of glittering insights — and we need your help!
-# Create a dashboard that offers a holistic view of the NEAR ecosystem, including activity, supply, staking, and development. Your dashboard should focus on providing 
-# everything a newcomer or experienced user should know, organized and presented in a way that is simple to understand, easy to navigate, and understandable and 
-#valuable for novices and experienced users alike.
-
-
 # 📚 Libraries
 import streamlit as st
 import PIL
@@ -42,7 +33,7 @@ networks whose ownership is almost completely in the hands of its user community
 st.subheader('🎯 Purposes of Dashboard')
 st.write(
     """
-We created a dashboard documenting significant trends in transactions, wallets, supply, staking, development, or other aspects of the Terra ecosystem.
+We created a dashboard documenting significant trends in **transactions**, **wallets**, **supply**, **staking**, **development**, or other aspects of the **Terra ecosystem.**
 
 In page '📱Addresses', the number of active addresses and new wallets in 2023 is shown. In page '🛠Development', users can see the number of new contracts in 2023. 
 In page '💧LP Actions', all actions, whether providing or withdrawing liquidity in the new year, are monitored. NFTs are considered one of the most attractive ideas 
