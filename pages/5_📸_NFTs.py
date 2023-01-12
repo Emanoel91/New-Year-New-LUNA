@@ -12,24 +12,15 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='NFTs - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('📸 NFTs')
 
-# Cover
-c1 , c2 = st.columns(2)
+st.subheader('📃 definitions')
+st.write(
+    """
+**1️⃣ NFT**: NFT means non-fungible tokens (NFTs), which are generally created using the same type of programming used for cryptocurrencies. In simple terms these 
+cryptographic assets are based on blockchain technology. 
 
-#c1.image(Image.open('Images/transactions.JPG'))
-
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
+**2️⃣ Minting: Minting an NFT, or non-fungible token, is publishing a unique digital asset on a blockchain.
+    """
+)
 
 # dash_style
 with open('style.css')as f:
@@ -331,16 +322,3 @@ with c2:
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)       
        
        
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-        
