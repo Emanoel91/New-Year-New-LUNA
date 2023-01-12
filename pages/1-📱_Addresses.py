@@ -13,7 +13,7 @@ st.set_page_config(page_title='Addresses - New Year New LUNA', page_icon=':bar_c
 st.title('📱 Addresses')
 
 
-
+st.subheader('📃 definitions')
 st.write(
     """
 **1️⃣ Active Address**:  An address is considered active as soon as it becomes a direct participant in a successful transaction.
@@ -55,8 +55,6 @@ c1, c2 = st.columns(2)
 with c1:
         st.metric(label='Total Active Addresses (2023)', value=df['Total Active Addresses'])
 
-with c2:
-        st.metric(label='Total New Addresses (2023)', value=df['Total New Addresses'])
 
 df = Active_Addresses
 fig = px.bar(df, x='Date', y='Active Addresses', title='Number of Avtive Addresses per Day', log_y=False)
