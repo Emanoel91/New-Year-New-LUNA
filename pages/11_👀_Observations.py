@@ -12,10 +12,6 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Observations - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('👀 Observations')
 
-
-
-
-df = Current_LUNA_Price
 c1, c2 = st.columns(2)
     
 with c1:
