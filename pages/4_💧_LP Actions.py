@@ -12,24 +12,13 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='LP Actions - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('💧 LP Actions')
 
-# Cover
-c1 , c2 = st.columns(2)
-
-#c1.image(Image.open('Images/transactions.JPG'))
-
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
+st.subheader('📃 definitions')
+st.write(
+    """
+**1️⃣ Liquidity Pool or Liquidity Provider token**: Also called "pool tokens" and "liquidity tokens," an LP token is a crypto token given to users who loan their 
+crypto to a liquidity pool. The LP tokens represent a user's share of the pool and can always be redeemed for the original tokens.
+    """
+)
 
 # dash_style
 with open('style.css')as f:
