@@ -43,12 +43,21 @@ def get_data(query1):
     elif query1 == 'Transactions Count':
               return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d2ab8450-d214-4fc4-90a8-b6b258c4c573/data/latest')
     elif query1 == 'Transactions Status':
-              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d3605635-4543-4b5d-af72-61bcbdae439e/data/latest')       
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/d3605635-4543-4b5d-af72-61bcbdae439e/data/latest')     
+    elif query1 == 'Transactions':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/b0cbd7ce-9ccb-4fed-b4e3-524def997fb8/data/latest')  
+    elif query1 == 'Max/Avg/Median/Min Transaction Fees':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/e5ffdad3-6d81-4589-920d-00d4c4caed6c/data/latest')
+    elif query1 == 'Average':
+              return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/4fe93470-7960-4541-ab91-eb6e5e90a9d5/data/latest')     
     return None
 
 Statistics = get_data('Statistics')
 Transactions_Count = get_data('Transactions Count')
 Transactions_Status = get_data('Transactions Status')
+Transactions = get_data('Transactions')
+Max_Avg_Median_Min_Transaction_Fees = get_data('Max/Avg/Median/Min Transaction Fees')
+Average = get_data('Average')
 
 df = Statistics
 c1, c2, c3 = st.columns(3)
@@ -78,20 +87,7 @@ with c1:
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
       
      
-with c2:
- df = Transactions_Count 
- fig = go.Figure()
- for i in df['Success'].unique():
-     fig.add_trace(go.Scatter(
-         name=i,
-         x=df.query("Success == @i")['Date'],
-         y=df.query("Success == @i")['TXs Count'],
-         mode='lines',
-         stackgroup='one',
-         groupnorm='percent'
-      ))
- fig.update_layout(title='Status of Transactions(%Normalized)')
- st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
+
 
 
 
