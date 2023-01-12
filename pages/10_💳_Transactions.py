@@ -137,9 +137,20 @@ fig = px.line(df, x='Date', y='Fee', color='Metric', title='Max/Avg/Median/Min T
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
-
-
+df = Average
+c1, c2, c3= st.columns(3)
+with c1:
+       fig = px.bar(df, x='Year', y='Average TXs Count', color='Year', title='Daily Average TXs Count', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+with c2:
+       fig = px.bar(df, x='Year', y='Average Blocks Count', color='Year', title='Daily Average Blocks Count', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Blocks', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c3:
+       fig = px.bar(df, x='Year', y='Average TX Fee', color='Year', title='Daily Average TX Fee', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
