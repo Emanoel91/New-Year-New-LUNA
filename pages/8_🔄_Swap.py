@@ -213,6 +213,16 @@ with c3:
        fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Year', yaxis_title='Swappers', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)        
 
+st.subheader('📃 Appendix')
+st.write(
+    """
+**1️⃣ Swapping**: Crypto swapping allows users to instantly trade one cryptocurrency for another, with no crypto-to-fiat exchange required. Saving time and paying less 
+in fees are obvious benefits, but it’s far from the only reason users participate in swapping. Crypto tokens are effectively the keys to their native blockchain’s 
+kingdom, affording holders various benefits within their ecosystems. Token holders may have the opportunity to vote on community governance proposals that guide the 
+future of a project or stake their share in exchange for passive interest income. Swapping makes it easier for crypto users to explore the further reaches of the 
+blockchain, and be a part of multiple projects they wish to support.
+    """
+) 
 
 
 
