@@ -9,5 +9,5 @@ from PIL import Image
 theme_plotly = None # None or streamlit
 
 # Structure
-st.set_page_config(page_title='Staking - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
-st.title('🩸 Staking')
+st.set_page_config(page_title='Observations - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
+st.title('👀 Observations')
