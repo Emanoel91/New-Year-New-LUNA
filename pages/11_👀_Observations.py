@@ -19,6 +19,14 @@ df = Current_LUNA_Price
 c1, c2 = st.columns(2)
     
 with c1:
-       st.subheader('🟢 Metrics that increased in 2023')
+       st.write(
+       """
+      🔴 Metrics that Increased in 2023 
+       """
+         )
 with c2:
-       st.subheader('🟢 Metrics that decreased in 2023')    
+         st.write(
+         """
+         🟢 Metrics that Increased in 2023 
+         """
+          )  
