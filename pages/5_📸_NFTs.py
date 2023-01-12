@@ -18,7 +18,7 @@ st.write(
 **1️⃣ NFT**: NFT means non-fungible tokens (NFTs), which are generally created using the same type of programming used for cryptocurrencies. In simple terms these 
 cryptographic assets are based on blockchain technology. 
 
-**2️⃣ Minting: Minting an NFT, or non-fungible token, is publishing a unique digital asset on a blockchain.
+**2️⃣ Minting**: Minting an NFT, or non-fungible token, is publishing a unique digital asset on a blockchain.
     """
 )
 
