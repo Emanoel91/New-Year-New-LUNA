@@ -28,13 +28,13 @@ st.subheader('📃 Introduction')
 
 st.write(
     """
-After the crash of the Terra network, its users and developers made various proposals to restore it. Finally, it was decided that a new network will be launched and 
-its cryptocurrencies will be divided among the users of the previous network with a certain ratio. The new network, which started its work on May 28, 2022, is called 
-Terra and its native cryptocurrency is LUNA. 
+After the crash of the **Terra network**, its users and developers made various proposals to restore it. Finally, it was decided that a new network will be launched and 
+its cryptocurrencies will be divided among the users of the previous network with a certain ratio. The new network, which started its work on **May 28, 2022**, is called 
+**Terra** and its native cryptocurrency is **LUNA**. 
 
-The new Terra network is based on the **Cosmos SDK**. The difference between the new network and the previous network is that there is no native stablecoin in this 
-network and the Burn/Mint mechanism has also been removed from it. One of the remarkable points of the new network is that only 10% of its cryptocurrencies belong to 
-its development team and 90% of the cryptocurrencies are owned by users. Considering this issue, it can be said that the Terra network is one of the few blockchain 
+The new **Terra network** is based on the **Cosmos SDK**. The difference between the new network and the previous network is that there is no native **stablecoin** in this 
+network and the **Burn/Mint** mechanism has also been removed from it. One of the remarkable points of the new network is that only **10%** of its cryptocurrencies belong to 
+its development team and **90%** of the cryptocurrencies are owned by users. Considering this issue, it can be said that the **Terra network** is one of the few blockchain 
 networks whose ownership is almost completely in the hands of its user community.
     """
 )
