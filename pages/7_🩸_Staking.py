@@ -205,7 +205,7 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 st.subheader('📃 Appendix')
 st.write(
     """
-**1️⃣ Staking**: Staking is when you lock crypto assets for a set period of time to help support the operation of a blockchain. In return for staking your crypto, 
+**Staking** is when you lock crypto assets for a set period of time to help support the operation of a blockchain. In return for staking your crypto, 
 you earn more cryptocurrency. Many blockchains use a proof of stake consensus mechanism.
     """
 )
