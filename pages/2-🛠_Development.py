@@ -12,24 +12,14 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Development - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('🛠 Development')
 
-# Cover
-c1 , c2 = st.columns(2)
+st.subheader('📃 definitions')
+st.write(
+    """
+**1️⃣ Contract**:  A contract is self-executing code that carries out a set of instructions, which are then verified on the blockchain. These contracts are 
+trustless, autonomous, decentralized, and transparent; they are irreversible and unmodifiable once deployed.
 
-#c1.image(Image.open('Images/transactions.JPG'))
-
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
+    """
+)
 
 # dash_style
 with open('style.css')as f:
