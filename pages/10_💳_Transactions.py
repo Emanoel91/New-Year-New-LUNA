@@ -124,13 +124,12 @@ fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Transactions
-fig = px.Bar(df, x='Date', y='TX Fee', title='Total Transaction Fees per Day')
-fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
+fig = px.bar(df, x='Date', y='TX Fee', title='Total Transaction Fees per Day', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-df = Transactions
-fig = px.Bar(df, x='Date', y='TPM', title='Daily TPM')
-fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
+fig = px.bar(df, x='Date', y='TPM', title='Daily TPM', log_y=False)
+fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
