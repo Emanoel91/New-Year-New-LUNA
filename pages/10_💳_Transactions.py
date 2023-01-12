@@ -163,7 +163,7 @@ with c2:
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c3:
        fig = px.bar(df, x='Year', y='Average TPM', color='Year', title='Daily Average TPM', log_y=False)
-       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
