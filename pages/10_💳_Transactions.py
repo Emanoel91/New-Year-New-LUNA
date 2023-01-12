@@ -123,7 +123,10 @@ fig.update_yaxes(title_text='', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+df = Transactions
+fig = px.area(df, x='Date', y='TX Fee', title='Total Transaction Fees per Day')
+fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA')
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
