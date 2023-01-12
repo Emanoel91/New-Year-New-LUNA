@@ -6,7 +6,7 @@ from PIL import Image
 luna = PIL.Image.open('luna-logo.png')
 
 # Title
-st.set_page_config(page_title='New Year New LUNA', page_icon=':bar_chart:' , layout='wide')
+st.set_page_config(page_title='New Year New LUNA', page_icon=luna , layout='wide')
 st.title('New Year New LUNA')
 
 # Content
