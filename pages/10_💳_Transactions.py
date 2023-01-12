@@ -133,7 +133,7 @@ fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_tit
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 df = Max_Avg_Median_Min_Transaction_Fees
-fig = px.line(df, x='Date', y='Fee', color='Metric', title='Max/Avg/Median/Min Transaction Fees', log_y=True)
+fig = px.area(df, x='Date', y='Fee', color='Metric', title='Max/Avg/Median/Min Transaction Fees', log_y=True)
 fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
