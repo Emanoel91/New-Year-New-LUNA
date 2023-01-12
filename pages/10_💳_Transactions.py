@@ -105,7 +105,14 @@ with c2:
       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Success', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)     
 
-
+df = Transactions
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['TXs Count'], name='TXs Count'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['Blocks Count'], name='Blocks Count'), secondary_y=True)
+fig.update_layout(title_text='Number of Transactions & Blocks per Day')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
