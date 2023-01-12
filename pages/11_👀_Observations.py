@@ -17,12 +17,12 @@ c1, c2 = st.columns(2)
 with c1:
        st.write(
        """
-      🔴 Metrics that Increased in 2023 
+      🟢 Metrics that Increased in 2023 
        """
          )
 with c2:
          st.write(
          """
-         🟢 Metrics that Increased in 2023 
+         🔴 Metrics that decreased in 2023 
          """
           )  
