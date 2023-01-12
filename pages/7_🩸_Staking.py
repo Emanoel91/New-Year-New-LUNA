@@ -12,24 +12,6 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Staking - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('🩸 Staking')
 
-# Cover
-c1 , c2 = st.columns(2)
-
-#c1.image(Image.open('Images/transactions.JPG'))
-
-#with c2: 
-#        st.subheader('📄 ***List of contents***')
- #       st.write(
-  #                  """
-   #                 1️⃣ **Overview**
-             
-    #                2️⃣ **Daily Transactions**
-            
-     #               3️⃣ **Activity of Addresses**
-            
-      #              4️⃣ **Transaction Fees**
-       #             """
-        #          )
 
 # dash_style
 with open('style.css')as f:
@@ -220,7 +202,13 @@ fig = px.scatter(df.sort_values(['Total Redelegations Volume', 'Total Redelegati
 fig.update_layout(legend_title=None, xaxis_title='Volume($LUNA)', yaxis_title='Redelegations Count')
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+st.subheader('📃 Appendix')
+st.write(
+    """
+**1️⃣ Staking**: Staking is when you lock crypto assets for a set period of time to help support the operation of a blockchain. In return for staking your crypto, 
+you earn more cryptocurrency. Many blockchains use a proof of stake consensus mechanism.
+    """
+)
 
 
 
