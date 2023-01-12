@@ -86,22 +86,22 @@ c1, c2 = st.columns(2)
    
 with c1:
       df = Transactions_Status  
-      fig = px.pie(df, values='TXs Count', names='Success', title='Total Transactions Count')
+      fig = px.pie(df, values='TXs Count', names='Success', title='Transactions Share')
       fig.update_layout(legend_title='Success', legend_y=0.5)
       fig.update_traces(textinfo='percent+label', textposition='inside')
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
       
-      fig = px.bar(df, x='Success', y='TXs Count', color='Success', title='', log_y=False)
+      fig = px.bar(df, x='Success', y='TXs Count', color='Success', title='Total Transactions Count', log_y=False)
       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Success', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 with c2:
       df = Transactions_Status  
-      fig = px.pie(df, values='TX Fee', names='Success', title='Total Transaction Fees')
+      fig = px.pie(df, values='TX Fee', names='Success', title='Share of Transaction Fees')
       fig.update_layout(legend_title='Success', legend_y=0.5)
       fig.update_traces(textinfo='percent+label', textposition='inside')
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
       
-      fig = px.bar(df, x='Success', y='TX Fee', color='Success', title='', log_y=False)
+      fig = px.bar(df, x='Success', y='TX Fee', color='Success', title='Total Transaction Fees', log_y=False)
       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='Success', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)     
 
