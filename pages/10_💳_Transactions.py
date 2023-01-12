@@ -152,7 +152,19 @@ with c3:
        fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$LUNA', xaxis={'categoryorder':'total ascending'})
        st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+c1, c2, c3= st.columns(3)
+with c1:
+       fig = px.bar(df, x='Year', y='Average TX per Block', color='Year', title='Daily Average TX per Block', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)  
+with c2:
+       fig = px.bar(df, x='Year', y='Average TX per Wallet', color='Year', title='Daily Average TX per Wallet', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c3:
+       fig = px.bar(df, x='Year', y='Average TPM', color='Year', title='Daily Average TPM', log_y=False)
+       fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='', xaxis={'categoryorder':'total ascending'})
+       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
