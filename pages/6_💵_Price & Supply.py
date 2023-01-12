@@ -90,12 +90,12 @@ st.subheader('🟡 LUNA Supply')
 
 st.subheader('📃 definitions')
 st.write(
-    """
-**1️⃣ Total Supply**: The amount of coins that have been already created, minus any coins that have been burned.
-
+    """  
+**1️⃣ Tota  l Supply**: The amount of coins that have been already created, minus any coins that have been burned.
+             
 **2️⃣ Circulating Supply**: The amount of coins that are circulating in the market and are in public hands. 
-    """
-
+    """  
+         )
 
 
 df = Current_Circulating_Supply 
