@@ -7,9 +7,9 @@ import plotly.subplots as sp
 from PIL import Image
 
 theme_plotly = None # None or streamlit
-luna = PIL.Image.open('luna-logo.png')
+
 # Structure
-st.set_page_config(page_title='Addresses - New Year New LUNA', page_icon=luna, layout='wide')
+st.set_page_config(page_title='Addresses - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('📱 Addresses')
 
 # Cover
