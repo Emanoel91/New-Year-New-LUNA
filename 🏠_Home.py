@@ -47,7 +47,7 @@ page '**🔄Swap**'. Refer to page '**💸Transfers**' to view the status of LUN
 st.subheader('🔑 Methodology')
 st.write(
     """
-In this dashboard, Flipside database is used to extract data related to LUNA currency. All charts show different information from the beginning of 2023 onwards. 
+In this dashboard, [Flipside Crypto](https://flipsidecrypto.xyz/) database is used to extract data related to LUNA currency. All charts show different information from the beginning of 2023 onwards. 
 To check the changes of various metrics related to LUNA currency, the average and median of the data in the new year have been compared with the average and median of 
 the data in December 2022.
     """
