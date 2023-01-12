@@ -59,7 +59,7 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 df = active_address_statistic
 c1, c2 = st.columns(2)
 with c1:
-        fig = px.bar(df, x='Year', y='Average', colour='Year', title='🟡 Daily Average Number of Active Addresses ')
+        fig = px.bar(df, x='Year', y='Average', color='Year', title='🟡 Daily Average Number of Active Addresses ')
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
         
