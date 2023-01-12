@@ -79,18 +79,18 @@ with c1:
       
 df = Transactions_Count      
 with c2:
-fig = go.Figure()
-for i in df['Success'].unique():
-    fig.add_trace(go.Scatter(
-        name=i,
-        x=df.query("Success == @i")['Date'],
-        y=df.query("Success == @i")['TXs Count'],
-        mode='lines',
-        stackgroup='one',
-        groupnorm='percent'
-     ))
-fig.update_layout(title='Status of Transactions(%Normalized)')
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
+ fig = go.Figure()
+ for i in df['Success'].unique():
+     fig.add_trace(go.Scatter(
+         name=i,
+         x=df.query("Success == @i")['Date'],
+         y=df.query("Success == @i")['TXs Count'],
+         mode='lines',
+         stackgroup='one',
+         groupnorm='percent'
+      ))
+ fig.update_layout(title='Status of Transactions(%Normalized)')
+ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly) 
 
 
 
