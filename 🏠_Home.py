@@ -3,7 +3,7 @@ import streamlit as st
 import PIL
 from PIL import Image
 
-#near = PIL.Image.open('near_chain_2.png')
+luna = PIL.Image.open('luna-logo.png')
 
 # Title
 st.set_page_config(page_title='New Year New LUNA', page_icon=':bar_chart:' , layout='wide')
