@@ -114,7 +114,14 @@ fig.update_yaxes(title_text='', secondary_y=False)
 fig.update_yaxes(title_text='', secondary_y=True)
 st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-
+df = Transactions
+fig = sp.make_subplots(specs=[[{'secondary_y': True}]])
+fig.add_trace(go.Bar(x=df['Date'], y=df['TX per Wallet'], name='TX per Wallet'), secondary_y=False)
+fig.add_trace(go.Line(x=df['Date'], y=df['TX per Block'], name='TX per Block'), secondary_y=False)
+fig.update_layout(title_text='Number of Transactions per Wallet & per Block')
+fig.update_yaxes(title_text='', secondary_y=False)
+fig.update_yaxes(title_text='', secondary_y=True)
+st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 
 
