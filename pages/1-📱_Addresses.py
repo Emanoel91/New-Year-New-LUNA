@@ -13,16 +13,6 @@ st.set_page_config(page_title='Addresses - New Year New LUNA', page_icon=':bar_c
 st.title('📱 Addresses')
 
 
-st.subheader('📃 definitions')
-st.write(
-    """
-**1️⃣ Active Address**:  An address is considered active as soon as it becomes a direct participant in a successful transaction.
-
-**2️⃣ New Address**: A new address refers to an address that has recorded its first transaction.
-
-    """
-)
-
 # dash_style
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
@@ -87,3 +77,11 @@ with c2:
         fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='')
         st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
+st.subheader('📃 Appendix')
+st.write(
+    """
+**Active Address**:  An address is considered active as soon as it becomes a direct participant in a successful transaction.
+
+**New Address**: A new address refers to an address that has recorded its first transaction.
+    """
+) 
