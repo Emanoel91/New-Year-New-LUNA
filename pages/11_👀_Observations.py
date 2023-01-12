@@ -11,3 +11,14 @@ theme_plotly = None # None or streamlit
 # Structure
 st.set_page_config(page_title='Observations - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('👀 Observations')
+
+
+
+
+df = Current_LUNA_Price
+c1, c2 = st.columns(2)
+    
+with c1:
+       st.subheader('🟢 Metrics that increased in 2023')
+with c2:
+       st.subheader('🟢 Metrics that decreased in 2023')    
