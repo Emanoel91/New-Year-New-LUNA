@@ -86,7 +86,7 @@ c1, c2 = st.columns(2)
    
 with c1:
       df = Transactions_Status  
-      fig = px.pie(df, values='TXs Count', names='Success', title='Transactions Share')
+      fig = px.pie(df, values='TXs Count', names='Success', title='Share of Transactions')
       fig.update_layout(legend_title='Success', legend_y=0.5)
       fig.update_traces(textinfo='percent+label', textposition='inside')
       st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
