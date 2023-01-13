@@ -49,7 +49,7 @@ with c1:
 with c2:
          st.write(
          """
-        🔴** Metrics that decreased in 2023**
+        🔴**Metrics that decreased in 2023**
          - Number of new addresses
          - Number of liquidity providing
          - Number of liquidity providers
