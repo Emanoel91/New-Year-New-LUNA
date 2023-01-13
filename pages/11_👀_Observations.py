@@ -62,7 +62,7 @@ with c2:
          """
           )  
         
-  st.write(
+st.write(
        """
 - All the above parameters are daily average values.
 - Since the data is constantly changing, the above report was written on January 11.
