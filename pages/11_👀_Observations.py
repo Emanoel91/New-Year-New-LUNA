@@ -12,17 +12,54 @@ theme_plotly = None # None or streamlit
 st.set_page_config(page_title='Observations - New Year New LUNA', page_icon=':bar_chart:', layout='wide')
 st.title('👀 Observations')
 
-c1, c2 = st.columns(2)
-    
+st.write(
+       """
+**A review of all metrics shows that:**
+       """
+         )    
+
+c1, c2 = st.columns(2)   
 with c1:
        st.write(
        """
       🟢 Metrics that Increased in 2023 
+      - Number of active addresses
+      - Number of new contracts
+      - Number of Liquidity withdrawal
+      - Number of liquidity withdrawers
+      - Number of collections minted
+      - Volume of LUNA delegating
+      - Number of delegating
+      - Number of redelegating
+      - Number of undelegating
+      - Number of delegators
+      - Number of redelegators
+      - Number of Undelegators
+      - Number of swaps
+      - Number of swappers
+      - Volume of LUNA transfers
+      - Number of LUNA transfers
+      - Number of LUNA senders & Receivers
+      - Number of transactions
+      - Number of blocks minted
+      - Transaction fees
+      - Transaction per minute (TPM)
        """
          )
 with c2:
          st.write(
          """
          🔴 Metrics that decreased in 2023 
+         - Number of new addresses
+         - Number of liquidity providing
+         - Number of liquidity providers
+         - Volume of NFT mints
+         - Number of transactions related to NFT mints
+         - Number of NFTs minted
+         - Volume of redelegating
+         - Volume of undelegating
+         - Swap volume
          """
           )  
+        
+    
