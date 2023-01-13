@@ -64,9 +64,9 @@ with c2:
         
 st.write(
        """
-- All the above parameters are daily average values.
-- Since the data is constantly changing, the above report was written on January 11.
-- While writing this report, the price of LUNA has increased by about 23% compared to the beginning of the year.
-- Some metrics such as number of transaction per wallet, number of transaction per block and number of unique minters in 2023 have not changed significantly compared to last year.
+- **All the above parameters are daily average values.**
+- **Since the data is constantly changing, the above report was written on January 11.**
+- **While writing this report, the price of LUNA has increased by about 23% compared to the beginning of the year.**
+- **Some metrics such as number of transaction per wallet, number of transaction per block and number of unique minters in 2023 have not changed significantly compared to last year.**
        """
          )   
