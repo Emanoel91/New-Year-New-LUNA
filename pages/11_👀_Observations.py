@@ -22,7 +22,7 @@ c1, c2 = st.columns(2)
 with c1:
        st.write(
        """
-      🟢 **Metrics that Increased in 2023**
+      ✔ **Metrics that Increased in 2023**
       - Number of active addresses
       - Number of new contracts
       - Number of Liquidity withdrawal
@@ -49,7 +49,7 @@ with c1:
 with c2:
          st.write(
          """
-        🔴**Metrics that decreased in 2023**
+        ❌**Metrics that decreased in 2023**
          - Number of new addresses
          - Number of liquidity providing
          - Number of liquidity providers
